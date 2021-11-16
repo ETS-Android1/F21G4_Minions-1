@@ -1,6 +1,5 @@
 package com.example.f21g4_minions;
 
-import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,10 +7,6 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import androidx.core.content.res.ResourcesCompat;
-
-import org.w3c.dom.Text;
 
 import java.util.List;
 
@@ -60,10 +55,10 @@ public class ProductAdapter extends BaseAdapter {
 
 
 
-        txtProductName.setText(Products.get(position).getProductName());
-        txtProductCategory.setText(Products.get(position).getProductCategory());
-        txtProductDescription.setText(Products.get(position).getProductDescription());
-        txtProductPrice.setText(Products.get(position).getProductPrice());
+        txtProductName.setText(Products.get(position).getProduct_name());
+        txtProductCategory.setText(Products.get(position).getProduct_category());
+        txtProductDescription.setText(Products.get(position).getProduct_description());
+        txtProductPrice.setText(Products.get(position).getProduct_price());
 
 
 //        Drawable img = ResourcesCompat

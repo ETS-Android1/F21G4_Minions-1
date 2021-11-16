@@ -2,17 +2,21 @@ package com.example.f21g4_minions;
 
 public class Product {
     private int ProductImg;
-    private String ProductName;
-    private String ProductCategory;
-    private String ProductDescription;
-    private String ProductPrice;
+    private String product_name;
+    private String product_category;
+    private String product_description;
+    private String product_price;
 
-    public Product(int productImg, String productName, String productCategory, String productDescription, String productPrice) {
+    public Product(){
+
+    }
+
+    public Product(int productImg, String productname, String productcategory, String productdescription, String productprice) {
         ProductImg = productImg;
-        ProductName = productName;
-        ProductCategory = productCategory;
-        ProductDescription = productDescription;
-        ProductPrice = productPrice;
+        product_name = productname;
+        product_category = productcategory;
+        product_description = productdescription;
+        product_price = productprice;
     }
 
     public int getProductImg() {
@@ -22,35 +26,35 @@ public class Product {
     public void setProductImg(int productImg) {
         ProductImg = productImg;
     }
-    public String getProductName() {
-        return ProductName;
+    public String getProduct_name() {
+        return product_name;
     }
 
-    public void setProductName(String productName) {
-        ProductName = productName;
+    public void setProduct_name(String product_name) {
+        this.product_name = product_name;
     }
 
-    public String getProductCategory() {
-        return ProductCategory;
+    public String getProduct_category() {
+        return product_category;
     }
 
-    public void setProductCategory(String productCategory) {
-        ProductCategory = productCategory;
+    public void setProduct_category(String product_category) {
+        this.product_category = product_category;
     }
 
-    public String getProductDescription() {
-        return ProductDescription;
+    public String getProduct_description() {
+        return product_description;
     }
 
-    public void setProductDescription(String productDescription) {
-        ProductDescription = productDescription;
+    public void setProduct_description(String product_description) {
+        this.product_description = product_description;
     }
 
-    public String getProductPrice() {
-        return ProductPrice;
+    public String getProduct_price() {
+        return product_price;
     }
 
-    public void setProductPrice(String productPrice) {
-        ProductPrice = productPrice;
+    public void setProduct_price(String product_price) {
+        this.product_price = product_price;
     }
 }
