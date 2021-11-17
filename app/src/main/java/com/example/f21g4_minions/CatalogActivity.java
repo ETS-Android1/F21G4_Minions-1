@@ -34,24 +34,11 @@ public class CatalogActivity extends AppCompatActivity {
     ProductAdapter productAdapter;
     DatabaseReference database;
     FirebaseStorage storage = FirebaseStorage.getInstance();
-//    Product product1 = new Product(R.drawable.gorilla,"Product1","ProductCategory1","ProductDescription1","ProductPrice1");
-//    Product product2 = new Product(R.drawable.panda,"Product2","ProductCategory2","ProductDescription2","ProductPrice2");
-//    Product product3 = new Product(R.drawable.bunnysplash,"Product3","ProductCategory3","ProductDescription3","ProductPrice3");
-//    Product product4 = new Product(R.drawable.eagle,"Product4","ProductCategory4","ProductDescription4","ProductPrice4");
-    // Create a storage reference from our app
+ // Create a storage reference from our app
     StorageReference storageRef = storage.getReference();
     ProgressDialog progressDialog;
 
-    // Create a reference with an initial file path and name
-   // StorageReference pathReference = storageRef.child("eagle.jpg");
-
-//    // Create a reference to a file from a Google Cloud Storage URI
-     //StorageReference gsReference = storage.getReferenceFromUrl("gs://minions-3175.appspot.com");
-
-    // Create a reference from an HTTPS URL
-// Note that in the URL, characters are URL escaped!
-//    StorageReference httpsReference = storage.getReferenceFromUrl("https://firebasestorage.googleapis.com/b/bucket/o/images%20stars.jpg");
-    List<Product> Products = new ArrayList<>();
+    ArrayList<Product> Products = new ArrayList<>();
 
     ListView listViewProduct;
 
@@ -62,46 +49,55 @@ public class CatalogActivity extends AppCompatActivity {
         setContentView(R.layout.activity_catalog);
 
         listViewProduct = findViewById(R.id.listViewProduct);
-        productAdapter = new ProductAdapter(Products);
+        productAdapter = new ProductAdapter(this, Products);
         listViewProduct.setAdapter(productAdapter);
-        progressDialog = new ProgressDialog(CatalogActivity.this);
-        progressDialog.setMessage("Fetching image: ");
-        progressDialog.setCancelable(false);
-        progressDialog.show();
 
 
-        storageRef = FirebaseStorage.getInstance().getReference("eagle.png");
-
-        try{
-            File localFile = File.createTempFile("tempfile", ".png");
-            storageRef.getFile(localFile)
-                    .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
-                        @Override
-                        public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
-                            if(progressDialog.isShowing()){
-                                progressDialog.dismiss();
-                                Bitmap bitmap = BitmapFactory.decodeFile(localFile.getAbsolutePath());
-                                ImageView imgProductImg = (ImageView) findViewById(R.id.imgProductImg);
-                                imgProductImg.setImageBitmap(bitmap);
-                            }
-                        }
-                    }).addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                    if(progressDialog.isShowing()){
-                        progressDialog.dismiss();
-                    }
-
-                    Toast.makeText(CatalogActivity.this, "Failed to retrieve", Toast.LENGTH_SHORT).show();
-                }
-            });
-        } catch (IOException ex){
-            ex.printStackTrace();
-        }
+        //Uncomment this if all images do not show up
+//        progressDialog = new ProgressDialog(CatalogActivity.this);
+//        progressDialog.setMessage("Fetching image: ");
+//        progressDialog.setCancelable(false);
+//        progressDialog.show();
 
 
+        //Code for fetching a single image from this line************************************
+//        storageRef = FirebaseStorage.getInstance().getReference("eagle.png");
+//
+//        try{
+//            File localFile = File.createTempFile("tempfile", ".png");
+//            storageRef.getFile(localFile)
+//                    .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+//                        @Override
+//                        public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+//                            if(progressDialog.isShowing()){
+//                                progressDialog.dismiss();
+//                                Bitmap bitmap = BitmapFactory.decodeFile(localFile.getAbsolutePath());
+//                                ImageView imgProductImg = (ImageView) findViewById(R.id.imgProductImg);
+//                                imgProductImg.setImageBitmap(bitmap);
+//                            }
+//                        }
+//                    }).addOnFailureListener(new OnFailureListener() {
+//                @Override
+//                public void onFailure(@NonNull Exception e) {
+//                    if(progressDialog.isShowing()){
+//                        progressDialog.dismiss();
+//                    }
+//
+//                    Toast.makeText(CatalogActivity.this, "Failed to retrieve", Toast.LENGTH_SHORT).show();
+//                }
+//            });
+//        } catch (IOException ex){
+//            ex.printStackTrace();
+//        }
+        //Code for fetching a single image to this line************************************
 
 
+
+
+        //Code for fetching all images
+
+
+        //path name to database
         database = FirebaseDatabase.getInstance().getReference("products");
         database.addValueEventListener(new ValueEventListener() {
             @Override
@@ -120,30 +116,6 @@ public class CatalogActivity extends AppCompatActivity {
             }
 
         });
-
-
-
-//        final long ONE_MEGABYTE = 1024 * 1024;
-//        gsReference.getBytes(ONE_MEGABYTE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
-//            @Override
-//            public void onSuccess(byte[] bytes) {
-//                // Data for "images/island.jpg" is returns, use this as needed
-//                Bitmap bmp = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
-//                ImageView imgProductImg = (ImageView) findViewById(R.id.imgProductImg);
-//                imgProductImg.setImageBitmap(Bitmap.createScaledBitmap(bmp, imgProductImg.getWidth(), imgProductImg.getHeight(), false));
-//
-////                for (Product product: Products) {
-//////                    product.setProductImg();
-////                }
-//            }
-//        }).addOnFailureListener(new OnFailureListener() {
-//            @Override
-//            public void onFailure(@NonNull Exception exception) {
-//                // Handle any errors
-//            }
-//        });
-
-
 
 
     }

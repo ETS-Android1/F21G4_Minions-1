@@ -1,7 +1,7 @@
 package com.example.f21g4_minions;
 
 public class Product {
-    private int ProductImg;
+    private String product_img;
     private String product_name;
     private String product_category;
     private String product_description;
@@ -11,20 +11,20 @@ public class Product {
 
     }
 
-    public Product(int productImg, String productname, String productcategory, String productdescription, String productprice) {
-        ProductImg = productImg;
+    public Product(String productimgUrl, String productname, String productcategory, String productdescription, String productprice) {
+        product_img = productimgUrl;
         product_name = productname;
         product_category = productcategory;
         product_description = productdescription;
         product_price = productprice;
     }
 
-    public int getProductImg() {
-        return ProductImg;
+    public String getProduct_img() {
+        return product_img;
     }
 
-    public void setProductImg(int productImg) {
-        ProductImg = productImg;
+    public void setProduct_img(String product_img) {
+        this.product_img = product_img;
     }
     public String getProduct_name() {
         return product_name;

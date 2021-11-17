@@ -1,5 +1,6 @@
 package com.example.f21g4_minions;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,14 +9,24 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class ProductAdapter extends BaseAdapter {
 
 
     List<Product> Products;
+    private Context context;
 
     public ProductAdapter(List<Product> products) {
+        Products = products;
+    }
+
+    //Creating this constructor to pass tha context
+    public ProductAdapter(Context context, ArrayList<Product> products) {
+        this.context = context;
         Products = products;
     }
     @Override
@@ -51,8 +62,10 @@ public class ProductAdapter extends BaseAdapter {
         TextView txtProductPrice = (TextView) linearLayout.getChildAt(3);
 
 
-        imgProductImg.setImageResource(Products.get(position).getProductImg());
+        //imgProductImg.setImageResource(Products.get(position).getProduct_imgUrl());
 
+        //Using glide library to show the images
+        Glide.with(context).load(Products.get(position).getProduct_img()).into(imgProductImg);
 
 
         txtProductName.setText(Products.get(position).getProduct_name());
