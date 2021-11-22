@@ -29,6 +29,7 @@ public class ProductAdapter extends BaseAdapter {
         this.context = context;
         Products = products;
     }
+
     @Override
     public int getCount() {
         return Products.size();

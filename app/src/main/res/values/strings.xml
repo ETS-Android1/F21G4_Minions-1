@@ -7,4 +7,11 @@
     <string name="btnAddToWishlist">Add to Wishlist</string>
     <string name="txtCart">CART</string>
     <string name="txtWishlist">WISHLIST</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_in">Sign In</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="no_account">Don\'t have an account?</string>
+    <string name="have_account">Already have an account?</string>
 </resources>
