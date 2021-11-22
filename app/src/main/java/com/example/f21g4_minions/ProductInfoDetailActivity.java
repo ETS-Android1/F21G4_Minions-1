@@ -36,16 +36,16 @@ public class ProductInfoDetailActivity extends AppCompatActivity {
 
             btnAddToCart = findViewById(R.id.btnAddToCart);
             btnAddToWishlist = findViewById(R.id.btnAddToWishlist);
-// temp code
+// temp code begin
             btnTemp = findViewById(R.id.btnTemp);
 
             btnTemp.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    startActivity(new Intent(ProductInfoDetailActivity.this, CartActivity.class));
+                    startActivity(new Intent(ProductInfoDetailActivity.this, WishlistActivity.class));
                 }
             });
-
+// temp code ends
             txtViewProductName.setText(ProductName);
             txtViewProductCategory.setText(ProductCategory);
             txtViewProductPrice.setText(ProductPrice);

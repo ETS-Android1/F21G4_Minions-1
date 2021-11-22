@@ -6,4 +6,5 @@
     <string name="btnAddToCart">Add to Cart</string>
     <string name="btnAddToWishlist">Add to Wishlist</string>
     <string name="txtCart">CART</string>
+    <string name="txtWishlist">WISHLIST</string>
 </resources>
