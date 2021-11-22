@@ -7,6 +7,7 @@
     tools:context=".LoginActivity"
     android:background="@drawable/bggg">
 
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="182dp"
@@ -15,17 +16,16 @@
         android:layout_marginLeft="138dp"
         android:layout_marginEnd="138dp"
         android:layout_marginRight="138dp"
-        android:layout_marginBottom="536dp"
-        android:fontFamily="Helvetica"
+        android:layout_marginBottom="516dp"
+        android:fontFamily="sans-serif-medium"
         android:text="@string/sign_in"
         android:textColor="@color/textHeading"
         android:textSize="40sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
-
 
     <EditText
         android:id="@+id/email"
