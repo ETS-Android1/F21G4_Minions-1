@@ -1,0 +1,37 @@
+package com.example.f21g4_minions;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.widget.TextView;
+
+public class ProductInfoDetailActivity extends AppCompatActivity {
+
+    TextView txtViewProductName;
+    TextView txtViewProductCategory;
+    TextView txtViewProductPrice;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_product_info_detail);
+        try {
+            Bundle bundle = getIntent().getExtras();
+            String ProductName = bundle.getString("ProductName");
+            String ProductCategory = bundle.getString("ProductCategory");
+            String ProductPrice = bundle.getString("ProductPrice");
+
+            txtViewProductName = findViewById(R.id.txtViewProductName);
+            txtViewProductCategory = findViewById(R.id.txtViewProductCategory);
+            txtViewProductPrice = findViewById(R.id.txtViewProductPrice);
+
+            txtViewProductName.setText(ProductName);
+            txtViewProductCategory.setText(ProductCategory);
+            txtViewProductPrice.setText(ProductPrice);
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+}

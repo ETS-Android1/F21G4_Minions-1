@@ -4,10 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -51,6 +54,22 @@ public class CatalogActivity extends AppCompatActivity {
         listViewProduct = findViewById(R.id.listViewProduct);
         productAdapter = new ProductAdapter(this, Products);
         listViewProduct.setAdapter(productAdapter);
+
+        listViewProduct.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                Intent intent = new Intent(CatalogActivity.this, ProductInfoDetailActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("ProductName",Products.get(i).getProduct_name());
+                bundle.putString("ProductCategory", Products.get(i).getProduct_category());
+                bundle.putString("ProductPrice", "$" + Products.get(i).getProduct_price());
+
+                intent.putExtras(bundle);
+                startActivity(intent);
+
+            }
+        });
 
 
         //Uncomment this if all images do not show up
