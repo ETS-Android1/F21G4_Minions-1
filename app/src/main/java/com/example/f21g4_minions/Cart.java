@@ -9,10 +9,6 @@ public class Cart {
         return ProductsinCart;
     }
 
-    public static void setProductsinCart(ArrayList<Product> productsinCart) {
-        ProductsinCart = productsinCart;
-    }
-
     public static void addItemToCart(Product product) {
         ProductsinCart.add(product);
     }

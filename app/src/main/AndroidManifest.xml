@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.F21G4_Minions">
         <activity
+            android:name=".WishlistActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CartActivity"
+            android:exported="false" />
+        <activity
             android:name=".ProductInfoDetailActivity"
             android:exported="false" />
         <activity

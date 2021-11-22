@@ -10,10 +10,6 @@ public class Wishlist {
         return ProductsinWishlist;
     }
 
-    public static void setProductsinWishlist(ArrayList<Product> productsinWishlist) {
-        ProductsinWishlist = productsinWishlist;
-    }
-
     public static void addItemToWishlist(Product product) {
         ProductsinWishlist.add(product);
     }

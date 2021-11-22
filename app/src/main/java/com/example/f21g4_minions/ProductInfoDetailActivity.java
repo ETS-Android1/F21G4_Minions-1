@@ -2,6 +2,7 @@ package com.example.f21g4_minions;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,6 +16,7 @@ public class ProductInfoDetailActivity extends AppCompatActivity {
 
     Button btnAddToCart;
     Button btnAddToWishlist;
+    Button btnTemp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,15 @@ public class ProductInfoDetailActivity extends AppCompatActivity {
 
             btnAddToCart = findViewById(R.id.btnAddToCart);
             btnAddToWishlist = findViewById(R.id.btnAddToWishlist);
+// temp code
+            btnTemp = findViewById(R.id.btnTemp);
+
+            btnTemp.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    startActivity(new Intent(ProductInfoDetailActivity.this, CartActivity.class));
+                }
+            });
 
             txtViewProductName.setText(ProductName);
             txtViewProductCategory.setText(ProductCategory);
