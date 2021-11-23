@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">F21G4_Minions</string>
+    <string name="txtProductName">Sample Product</string>
+    <string name="txtProductCategory">Sample Category</string>
+    <string name="txtProductPrice">$0.0</string>
+    <string name="btnAddToCart">Add to Cart</string>
+    <string name="btnAddToWishlist">Add to Wishlist</string>
+    <string name="txtCart">CART</string>
+    <string name="txtWishlist">WISHLIST</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_in">Sign In</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="no_account">Don\'t have an account?</string>
+    <string name="have_account">Already have an account?</string>
 </resources>

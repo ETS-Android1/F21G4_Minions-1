@@ -10,8 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.F21G4_Minions">
         <activity
-            android:name=".Splash"
-            android:exported="false" />
+            android:name=".LoginActivity"
+            android:exported="true" />
+        <activity
+            android:name="login.LoginActivity"
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
