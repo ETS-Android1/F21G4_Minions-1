@@ -12,13 +12,13 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewpager.widget.PagerAdapter;
 
-public class SilderAdapter extends PagerAdapter {
+public class SliderAdapter extends PagerAdapter {
 
     Context context;
 
     LayoutInflater layoutInflater;
 
-    public SilderAdapter(Context context) {
+    public SliderAdapter(Context context) {
         this.context = context;
     }
 
