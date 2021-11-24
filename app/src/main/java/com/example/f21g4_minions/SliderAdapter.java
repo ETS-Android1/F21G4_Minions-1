@@ -39,9 +39,11 @@ public class SliderAdapter extends PagerAdapter {
             R.string.second_slide,
             R.string.third_slide
     };
+
+    //Changed this to array.length
     @Override
     public int getCount() {
-        return 0;
+        return imagesArray.length;
     }
 
     @Override
@@ -66,7 +68,7 @@ public class SliderAdapter extends PagerAdapter {
 
         container.addView(view);
 
-        return super.instantiateItem(container, position);
+        return view;
     }
 
     @Override

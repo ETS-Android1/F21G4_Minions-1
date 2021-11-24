@@ -35,6 +35,8 @@ public class OnBoardingActivity extends AppCompatActivity {
         dotsLayout = findViewById(R.id.dots);
         btn = findViewById(R.id.get_started_btn);
         addDots(0);
+        
+        
 
         sliderAdapter = new SliderAdapter(this);
         viewPager.setAdapter(sliderAdapter);
