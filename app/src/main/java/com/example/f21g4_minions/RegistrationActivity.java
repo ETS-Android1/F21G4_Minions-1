@@ -69,7 +69,7 @@ public class RegistrationActivity extends AppCompatActivity {
         try{
             // clicking on sign in text
             Log.d(TAG_DEBUG_REGISTER, "Moved to Login Activity");
-            txtsignInRegister.setOnClickListener((View view) -> startActivity(new Intent(RegistrationActivity.this, LoginActivity.class)));
+            txtsignInRegister.setOnClickListener((View view) -> startActivity(new Intent(RegistrationActivity.this, LoginActivity2.class)));
         }catch(Exception e){
             Log.e(TAG_ERROR_REGISTER,e.getMessage());
         }
