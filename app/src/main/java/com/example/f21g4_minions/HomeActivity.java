@@ -6,7 +6,9 @@ import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
+import android.widget.TextView;
 
+import com.example.f21g4_minions.Prevalent.Prevalent;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
@@ -21,6 +23,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.f21g4_minions.databinding.ActivityHomeBinding;
 
+import de.hdodenhof.circleimageview.CircleImageView;
 import io.paperdb.Paper;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
@@ -53,10 +56,23 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 R.id.nav_cart, R.id.nav_orders, R.id.nav_categories, R.id.nav_settings, R.id.nav_categories)
                 .setOpenableLayout(drawer)
                 .build();
+        // Fix
 
 //        NavController navController = Navigation.findNavController(this, R.id.nav_cart);
 //        NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
 //        NavigationUI.setupWithNavController(navigationView, navController);
+
+        NavigationView navigationView1 = findViewById(R.id.nav_view);
+        navigationView1.setNavigationItemSelectedListener(this);
+
+        View headerView = navigationView1.getHeaderView(0);
+        TextView usernameTextView = headerView.findViewById(R.id.user_profile_name);
+        CircleImageView profileImageView = headerView.findViewById(R.id.user_profile_image);
+
+        usernameTextView.setText(Prevalent.currentOnlineUser.getName());
+
+
+
     }
 
     @Override
