@@ -61,17 +61,17 @@
         >
 
         <com.rey.material.widget.CheckBox
-            android:id="@+id/remember_me_chkb"
+            android:id="@+id/rememberCheckbox"
+            style="@style/Material.Drawable.CheckBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/Material.Drawable.CheckBox"
+            android:layout_marginLeft="17dp"
+            android:gravity="center_vertical"
             android:text="Remember me"
             android:textColor="@color/colorPrimaryDark"
-            app:cbd_strokeColor="@color/colorPrimaryDark"
-            android:gravity="center_vertical"
             android:textSize="18sp"
-            android:layout_marginLeft="17dp"
-            tools:ignore="MissingClass" />
+            app:cbd_strokeColor="@color/colorPrimaryDark"
+            tools:ignore="MissingClass,TouchTargetSizeCheck" />
 
         <TextView
             android:id="@+id/forget_password_link"

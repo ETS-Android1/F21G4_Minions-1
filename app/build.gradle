@@ -46,6 +46,9 @@ dependencies {
 
     implementation 'com.google.firebase:firebase-auth:19.2.0'
 
+    //Paper library dependency
+    implementation 'io.github.pilgr:paperdb:2.7.1'
+
     implementation 'com.google.firebase:firebase-storage:20.0.0'
 
     testImplementation 'junit:junit:4.+'

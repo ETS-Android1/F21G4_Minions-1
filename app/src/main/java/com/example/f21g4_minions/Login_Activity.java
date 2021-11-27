@@ -9,15 +9,21 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.f21g4_minions.Model.Users;
+import com.example.f21g4_minions.Prevalent.Prevalent;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.rey.material.widget.CheckBox;
+
+import io.paperdb.Paper;
 
 public class Login_Activity extends AppCompatActivity {
 
@@ -26,6 +32,8 @@ public class Login_Activity extends AppCompatActivity {
     private Button LoginButton;
     private ProgressDialog loadingBar;
     private String parentDBName = "User";
+    private TextView AdminLink, NotAdminLink;
+    private CheckBox chkBoxRememberme;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +44,13 @@ public class Login_Activity extends AppCompatActivity {
         LoginButton = findViewById(R.id.login_btn);
         InputPhoneNumber = findViewById(R.id.login_phone_number_input);
         InputPassword = findViewById(R.id.login_password_input);
+        AdminLink = findViewById(R.id.admin_panel_link);
+        NotAdminLink = findViewById(R.id.not_admin_panel_link);
         loadingBar = new ProgressDialog(this);
+
+        chkBoxRememberme = findViewById(R.id.rememberCheckbox);
+        //We will use paper library to write user info to android memory
+        Paper.init(this);
 
 
 
@@ -75,11 +89,16 @@ public class Login_Activity extends AppCompatActivity {
 
      private void AllowAccessToAccount(String phone, String password) {
 
+        if(chkBoxRememberme.isChecked()){
+
+            Paper.book().write(Prevalent.UserPhoneKey, phone);
+            Paper.book().write(Prevalent.UserPasswordKey, password);
+        }
+
          final DatabaseReference Rootref;
          Rootref = FirebaseDatabase.getInstance().getReference();
 
          //Now see if user is available or not
-
          Rootref.addListenerForSingleValueEvent(new ValueEventListener() {
              @Override
              public void onDataChange(@NonNull DataSnapshot snapshot) {
