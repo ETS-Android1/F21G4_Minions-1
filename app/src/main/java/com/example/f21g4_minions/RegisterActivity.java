@@ -93,7 +93,7 @@ public class RegisterActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 //Checking with the child that if the user exists with this phone number inside the users collection
-                if(!(snapshot.child("Users").child(phone).exists())){
+                if(!(snapshot.child("User").child(phone).exists())){
 
                     //using a hashmap to create the new user
                     HashMap<String, Object> userDataMap = new HashMap<>();
