@@ -13,13 +13,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.F21G4_Minions">
         <activity
+            android:name=".HomeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_home"
+            android:theme="@style/Theme.F21G4_Minions.NoActionBar" />
+        <activity
             android:name=".AdminCategoryActivity"
             android:exported="false" />
         <activity
             android:name=".AdminAddNewProductActivity"
-            android:exported="false" />
-        <activity
-            android:name=".HomeActivity"
             android:exported="false" />
         <activity
             android:name=".RegisterActivity"
@@ -33,7 +35,6 @@
         <activity
             android:name=".LoginActivity2"
             android:exported="false" />
-
         <activity
             android:name=".MainActivity"
             android:exported="true">
