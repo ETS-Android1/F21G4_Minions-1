@@ -18,6 +18,8 @@ public class AdminCategoryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_category);
+
+        //creating reference to all the product categories
         //Linear view 1
         tShirts = findViewById(R.id.t_shirts);
         sportsTshirts = findViewById(R.id.sports_t_shirts);
