@@ -62,6 +62,30 @@ public class Login_Activity extends AppCompatActivity {
 
 
         });
+
+        AdminLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LoginButton.setText("Login Admin");
+                AdminLink.setVisibility(View.INVISIBLE);
+                NotAdminLink.setVisibility(View.VISIBLE);
+                //We are creating different database for the admins
+                parentDBName = "Admins";
+
+            }
+        });
+
+        NotAdminLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LoginButton.setText("Login");
+                AdminLink.setVisibility(View.VISIBLE);
+                NotAdminLink.setVisibility(View.INVISIBLE);
+                //We are creating different database for the admins
+                parentDBName = "User";
+
+            }
+        });
     }
 
 
@@ -110,9 +134,16 @@ public class Login_Activity extends AppCompatActivity {
                      if(usersData.getPhone().equals(phone)){
                          if(usersData.getPassword().equals(password)){
 
-                             Toast.makeText(Login_Activity.this, "Logged in successfully", Toast.LENGTH_LONG).show();
-                            loadingBar.dismiss();
-                             startActivity(new Intent(Login_Activity.this, HomeActivity.class));
+                            if(parentDBName.equals("Admins")){
+                                Toast.makeText(Login_Activity.this, "Welcome admin Logged in successfully", Toast.LENGTH_LONG).show();
+                                loadingBar.dismiss();
+                                startActivity(new Intent(Login_Activity.this, AdminAddNewProductActivity.class));
+                            }
+                            else if(parentDBName.equals("User")){
+                                Toast.makeText(Login_Activity.this, "Logged in successfully", Toast.LENGTH_LONG).show();
+                                loadingBar.dismiss();
+                                startActivity(new Intent(Login_Activity.this, HomeActivity.class));
+                            }
 
                          }else{
                              Toast.makeText(Login_Activity.this, "Password is incorrect", Toast.LENGTH_SHORT).show();
