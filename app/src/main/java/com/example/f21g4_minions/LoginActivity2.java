@@ -54,7 +54,7 @@ public class LoginActivity2 extends AppCompatActivity {
                 auth.signInWithEmailAndPassword(userEmail, userPassword).addOnCompleteListener(LoginActivity2.this, task -> {
                     if(task.isSuccessful()){
                         Toast.makeText(LoginActivity2.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(LoginActivity2.this, MainActivity.class));
+                        //startActivity(new Intent(LoginActivity2.this, MainActivity.class));
                     } else {
                         Toast.makeText(LoginActivity2.this, "Login Failed" + task.getException(), Toast.LENGTH_SHORT).show();
                         Log.e(TAG_ERROR_LOGIN, String.valueOf(task.getException()));
@@ -66,7 +66,7 @@ public class LoginActivity2 extends AppCompatActivity {
         try{
             // clicking on sign in text
             Log.d(TAG_DEBUG_LOGIN, "Moved to Registration Activity");
-            txtsignUpLogin.setOnClickListener((View view) -> startActivity(new Intent(LoginActivity2.this, RegistrationActivity.class)));
+            //txtsignUpLogin.setOnClickListener((View view) -> startActivity(new Intent(LoginActivity2.this, RegistrationActivity.class)));
         }catch(Exception e){
             Log.e(TAG_ERROR_LOGIN, e.getMessage());
         }

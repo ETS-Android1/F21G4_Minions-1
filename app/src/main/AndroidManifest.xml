@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.F21G4_Minions">
         <activity
+            android:name=".AdminCategoryActivity"
+            android:exported="false" />
+        <activity
             android:name=".AdminAddNewProductActivity"
             android:exported="false" />
         <activity
@@ -30,9 +33,7 @@
         <activity
             android:name=".LoginActivity2"
             android:exported="false" />
-        <activity
-            android:name=".RegistrationActivity"
-            android:exported="false" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
