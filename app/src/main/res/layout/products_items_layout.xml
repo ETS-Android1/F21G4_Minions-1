@@ -6,20 +6,19 @@
     android:layout_marginTop="20dp"
     android:layout_marginStart="15dp"
     android:layout_marginEnd="15dp"
-    android:layout_marginLeft="15dp"
     app:cardElevation="15dp">
-
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <TextView
             android:id="@+id/product_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Product Name"
             android:textAlignment="center"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:gravity="center_horizontal"
             android:textStyle="bold"
             android:textColor="@color/colorPrimary"
@@ -35,18 +34,32 @@
             />
 
         <TextView
-            android:id="@+id/product_description"
+            android:id="@+id/product_price"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/product_image"
-            android:text="Product Description"
+            android:text="Product Price"
             android:textAlignment="center"
-            android:textSize="16dp"
+            android:textSize="18sp"
             android:gravity="center_horizontal"
+            android:textStyle="bold"
             android:textColor="@color/colorPrimaryDark"
             />
 
+
+        <TextView
+            android:id="@+id/product_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/product_price"
+            android:text="Product Description"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            android:gravity="center_horizontal"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimaryDark"
+            />
     </RelativeLayout>
 
 
-</androidx.cardview.widget.CardView>
+    </androidx.cardview.widget.CardView>
