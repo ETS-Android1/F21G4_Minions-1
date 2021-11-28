@@ -131,6 +131,17 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 productViewHolder.txtProductDescription.setText(products.getDescription());
                 productViewHolder.txtProductPrice.setText("Price = "+ products.getPrice()+ "$");
                 Picasso.get().load(products.getImage()).into(productViewHolder.imageView);
+
+
+                // When user clicks the product from home move to product details activity
+                productViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(HomeActivity.this, ProductDetailsActivity.class);
+                        intent.putExtra("pid", products.getPid());
+                        startActivity(intent);
+                    }
+                });
             }
 
             @NonNull
