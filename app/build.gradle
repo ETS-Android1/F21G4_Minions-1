@@ -52,6 +52,10 @@ dependencies {
     // to display images we use Picaso library
     implementation 'com.squareup.picasso:picasso:2.71828'
 
+    // to create the adding and removing of products in the cart
+    // https://android-arsenal.com/details/1/4136 - Elegant number button
+    implementation 'com.cepheuen.elegant-number-button:lib:1.0.2'
+
     implementation 'com.google.firebase:firebase-storage:20.0.0'
     //TODO mentioned at 12:55 in video 16
     implementation 'com.firebaseui:firebase-ui-database:3.2.2'
