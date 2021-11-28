@@ -60,7 +60,7 @@
         android:layout_height="wrap_content"
         android:elevation="6dp"
         app:textSize="16dp"
-        android:initialNumber="1"
+
         app:finalNumber="10"
         android:layout_below="@+id/product_price_details"
         android:layout_centerHorizontal="true"
