@@ -31,7 +31,7 @@ public class Login_Activity extends AppCompatActivity {
     private EditText InputPhoneNumber, InputPassword;
     private Button LoginButton;
     private ProgressDialog loadingBar;
-    private String parentDBName = "User";
+    private String parentDBName = "Users";
     private TextView AdminLink, NotAdminLink;
     private CheckBox chkBoxRememberme;
 
@@ -82,7 +82,7 @@ public class Login_Activity extends AppCompatActivity {
                 AdminLink.setVisibility(View.VISIBLE);
                 NotAdminLink.setVisibility(View.INVISIBLE);
                 //We are creating different database for the admins
-                parentDBName = "User";
+                parentDBName = "Users";
 
             }
         });
@@ -139,7 +139,7 @@ public class Login_Activity extends AppCompatActivity {
                                 loadingBar.dismiss();
                                 startActivity(new Intent(Login_Activity.this, AdminCategoryActivity.class));
                             }
-                            else if(parentDBName.equals("User")){
+                            else if(parentDBName.equals("Users")){
                                 Toast.makeText(Login_Activity.this, "Logged in successfully", Toast.LENGTH_LONG).show();
                                 loadingBar.dismiss();
                                 Intent intent = new Intent(Login_Activity.this, HomeActivity.class);
