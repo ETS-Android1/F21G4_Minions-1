@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -32,7 +33,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
     private TextView productPrice;
     private TextView productDescription;
     private TextView productName;
-    private String productID = "";
+    private String productID = "", state="Normal";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +53,25 @@ public class ProductDetailsActivity extends AppCompatActivity {
         getProductDetails(productID);
 
 
-        addToCartButton.setOnClickListener(v -> addingToCartList());
+        addToCartButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if(state.equals("Order Placed")||state.equals("Order Shipped")){
+                    Toast.makeText(ProductDetailsActivity.this, "You can purchase more orders, once your product is shipped or confirmed", Toast.LENGTH_LONG).show();
+                }
+                else{
+                    addingToCartList();
+                }
+            }
+        });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        //Calling this method for add to cart button validation
+        CheckOrderState();
     }
 
     private void addingToCartList(){
@@ -121,6 +140,34 @@ public class ProductDetailsActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+    private void CheckOrderState(){
+        DatabaseReference orderRef;
+        orderRef = FirebaseDatabase.getInstance().getReference().child("Orders")
+                .child(Prevalent.currentOnlineUser.getPhone());
+
+        orderRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists()){
+                    String shippingState = snapshot.child("state").getValue().toString();
+
+
+                    if(shippingState.equals("shipped")){
+                        state = "Order Shipped";
+
+                    }else if(shippingState.equals("not shipped")){
+                        state = "Order Placed";
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
 
             }
         });
