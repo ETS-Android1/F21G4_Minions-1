@@ -109,7 +109,7 @@ public class ConfirmFinalOrderActivity extends AppCompatActivity {
                                         Toast.makeText(ConfirmFinalOrderActivity.this, "Your final order has been placed successfully", Toast.LENGTH_SHORT).show();
 
                                         Intent intent = new Intent(ConfirmFinalOrderActivity.this, HomeActivity.class);
-                                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
                                         startActivity(intent);
                                     }
