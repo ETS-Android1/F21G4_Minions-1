@@ -25,7 +25,7 @@
             />
     </RelativeLayout>
 
-    <android.support.v7.widget.RelativeLayout
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/cart_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
