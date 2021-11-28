@@ -2,7 +2,7 @@ package com.example.f21g4_minions;
 
 import java.util.ArrayList;
 
-public class Cart {
+public class CartName {
     private static ArrayList<Product> ProductsinCart = new ArrayList<>();
 
     public static ArrayList<Product> getProductsinCart() {

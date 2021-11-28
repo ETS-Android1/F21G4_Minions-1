@@ -56,7 +56,7 @@ public class ProductInfoDetailActivity extends AppCompatActivity {
                     Product productToAddToCart = new Product(txtViewProductName.getText().toString(),
                             txtViewProductCategory.getText().toString(),
                             txtViewProductPrice.getText().toString());
-                    Cart.addItemToCart(productToAddToCart);
+                    //Cart.addItemToCart(productToAddToCart);
                 }
             });
 
