@@ -131,7 +131,7 @@ public class Login_Activity extends AppCompatActivity {
                      Users usersData = snapshot.child(parentDBName).child(phone).getValue(Users.class);
 
                      //Here we are checking if the input data is equals to the database data
-                     if(usersData.getPhone().equals(phone)){
+                     if(usersData!= null && usersData.getPhone().equals(phone)){
                          if(usersData.getPassword().equals(password)){
 
                             if(parentDBName.equals("Admins")){

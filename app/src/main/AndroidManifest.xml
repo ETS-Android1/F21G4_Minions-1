@@ -42,6 +42,9 @@
             android:name=".OnBoardingActivity"
             android:exported="true" />
         <activity
+            android:name=".CartActivity"
+            android:exported="true" />
+        <activity
             android:name=".LoginActivity2"
             android:exported="false" />
         <activity
