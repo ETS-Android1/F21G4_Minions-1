@@ -74,7 +74,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_cart, R.id.nav_orders, R.id.nav_categories, R.id.nav_settings, R.id.nav_categories)
+                R.id.nav_cart, R.id.nav_search, R.id.nav_categories, R.id.nav_settings, R.id.nav_categories)
                 .setOpenableLayout(drawer)
                 .build();
         // Fix
@@ -172,8 +172,9 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             Intent intent = new Intent(HomeActivity.this, CartActivity.class);
             startActivity(intent);
 
-        } else if (id==R.id.nav_orders) {
-
+        } else if (id==R.id.nav_search) {
+            Intent intent = new Intent(HomeActivity.this, SearchProductsActivity.class);
+            startActivity(intent);
 
         } else if (id==R.id.nav_categories) {
 
