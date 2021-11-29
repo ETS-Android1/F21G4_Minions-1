@@ -34,6 +34,7 @@ public class Login_Activity extends AppCompatActivity {
     private ProgressDialog loadingBar;
     private String parentDBName = "Users";
     private TextView AdminLink, NotAdminLink;
+    private TextView ForgetPasswordLink;
     private CheckBox chkBoxRememberme;
 
     @Override
@@ -48,6 +49,7 @@ public class Login_Activity extends AppCompatActivity {
         AdminLink = findViewById(R.id.admin_panel_link);
         NotAdminLink = findViewById(R.id.not_admin_panel_link);
         loadingBar = new ProgressDialog(this);
+        ForgetPasswordLink = findViewById(R.id.forget_password_link);
 
         chkBoxRememberme = findViewById(R.id.rememberCheckbox);
         //We will use paper library to write user info to android memory
