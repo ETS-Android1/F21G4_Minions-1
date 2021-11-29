@@ -66,6 +66,16 @@ public class Login_Activity extends AppCompatActivity {
 
         });
 
+
+        ForgetPasswordLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Login_Activity.this, ResetPasswordActivity.class);
+                intent.putExtra("login","check");
+                startActivity(intent);
+            }
+        });
+
         AdminLink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
