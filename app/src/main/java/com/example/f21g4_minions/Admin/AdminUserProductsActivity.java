@@ -1,4 +1,4 @@
-package com.example.f21g4_minions;
+package com.example.f21g4_minions.Admin;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.f21g4_minions.Model.Cart;
+import com.example.f21g4_minions.R;
 import com.example.f21g4_minions.ViewHolder.CartViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;

@@ -2,7 +2,6 @@ package com.example.f21g4_minions;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -10,13 +9,12 @@ import android.view.Menu;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.f21g4_minions.Admin.AdminMaintainProductsActivity;
 import com.example.f21g4_minions.Model.Products;
 import com.example.f21g4_minions.Prevalent.Prevalent;
 import com.example.f21g4_minions.ViewHolder.ProductViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
-import com.google.android.gms.analytics.ecommerce.Product;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.annotation.NonNull;

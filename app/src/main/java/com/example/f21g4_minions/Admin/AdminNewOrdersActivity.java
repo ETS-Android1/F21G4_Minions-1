@@ -1,4 +1,4 @@
-package com.example.f21g4_minions;
+package com.example.f21g4_minions.Admin;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -17,6 +17,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.f21g4_minions.Model.AdminOrders;
+import com.example.f21g4_minions.R;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;

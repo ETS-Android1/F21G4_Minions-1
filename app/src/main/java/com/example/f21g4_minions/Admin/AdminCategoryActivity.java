@@ -1,4 +1,4 @@
-package com.example.f21g4_minions;
+package com.example.f21g4_minions.Admin;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+
+import com.example.f21g4_minions.HomeActivity;
+import com.example.f21g4_minions.MainActivity;
+import com.example.f21g4_minions.R;
 
 public class AdminCategoryActivity extends AppCompatActivity {
 
