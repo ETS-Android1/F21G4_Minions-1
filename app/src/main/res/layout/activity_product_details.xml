@@ -58,21 +58,19 @@
         android:id="@+id/number_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:elevation="6dp"
-        app:textSize="16dp"
-
-        app:finalNumber="10"
         android:layout_below="@+id/product_price_details"
         android:layout_centerHorizontal="true"
+
         android:layout_marginTop="10dp"
-        >
-    </com.cepheuen.elegantnumberbutton.view.ElegantNumberButton>
+        android:elevation="6dp"
+        app:finalNumber="10"
+        app:textSize="16dp"></com.cepheuen.elegantnumberbutton.view.ElegantNumberButton>
 
     <Button
         android:id="@+id/pd_add_to_cart_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/textHeading"
         android:layout_margin="15dp"
         android:layout_alignParentBottom="true"
         android:text="Add to Cart"

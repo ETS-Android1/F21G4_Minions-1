@@ -10,7 +10,7 @@
         android:id="@+id/r5"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/blue"
         android:layout_alignParentTop="true"
         tools:ignore="MissingConstraints">
 
@@ -21,7 +21,7 @@
             android:background="@color/white"
             android:hint="Product Name"
             android:padding="9dp"
-            android:textColorHint="@color/colorPrimaryDark"
+            android:textColorHint="@color/black"
             android:textSize="18dp"
             android:textStyle="bold"
             android:layout_centerVertical="true"
@@ -35,7 +35,7 @@
             android:textColor="@color/white"
             android:textSize="16dp"
             android:textStyle="bold"
-            android:background="@color/colorPrimaryDark"
+            android:background="@color/textHeading"
             android:layout_centerInParent="true"
             android:layout_toRightOf="@+id/search_product_name"
             />

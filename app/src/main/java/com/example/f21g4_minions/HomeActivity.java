@@ -47,9 +47,18 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityHomeBinding binding;
 
+    private String type = "";
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+        if(bundle!=null){
+            type = getIntent().getExtras().get("Admin").toString();
+        }
 
         ProductsRef = FirebaseDatabase.getInstance().getReference().child("Products");
 
@@ -90,9 +99,12 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         TextView usernameTextView = headerView.findViewById(R.id.user_profile_name);
         CircleImageView profileImageView = headerView.findViewById(R.id.user_profile_image);
 
-        if (Prevalent.currentOnlineUser != null)
-            usernameTextView.setText(Prevalent.currentOnlineUser.getName());
-        Picasso.get().load(Prevalent.currentOnlineUser.getImage()).placeholder(R.drawable.profile).into(profileImageView);
+        if (Prevalent.currentOnlineUser != null){
+            if(!type.equals("Admin")){
+                usernameTextView.setText(Prevalent.currentOnlineUser.getName());
+                Picasso.get().load(Prevalent.currentOnlineUser.getImage()).placeholder(R.drawable.profile).into(profileImageView);
+            }
+        }
 
         recyclerView = findViewById(R.id.recycler_menu);
         recyclerView.setHasFixedSize(true);
@@ -136,13 +148,23 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 Picasso.get().load(products.getImage()).into(productViewHolder.imageView);
 
 
+
                 // When user clicks the product from home move to product details activity
                 productViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent = new Intent(HomeActivity.this, ProductDetailsActivity.class);
-                        intent.putExtra("pid", products.getPid());
-                        startActivity(intent);
+
+                        if(type.equals("Admin")){
+                            Intent intent = new Intent(HomeActivity.this, AdminMaintainProductsActivity.class);
+                            intent.putExtra("pid", products.getPid());
+                            startActivity(intent);
+                        }else{
+                            Intent intent = new Intent(HomeActivity.this, ProductDetailsActivity.class);
+                            intent.putExtra("pid", products.getPid());
+                            startActivity(intent);
+                        }
+
+
                     }
                 });
             }
