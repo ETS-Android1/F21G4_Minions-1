@@ -173,7 +173,7 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
         productMap.put("image", downloadImageUrl);
         productMap.put("category", categoryName);
         productMap.put("price", Price);
-        productMap.put("name", Pname);
+        productMap.put("pname", Pname);
 
         //Now we will store it inside the database
         ProductRef.child(productRandomKey).updateChildren(productMap)
