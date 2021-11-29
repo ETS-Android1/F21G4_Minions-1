@@ -73,8 +73,12 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             public void onClick(View view) {
 //                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
 //                        .setAction("Action", null).show();
-                Intent intent = new Intent(HomeActivity.this, CartActivity.class);
-                startActivity(intent);
+
+                if(!type.equals("Admin")){
+                    Intent intent = new Intent(HomeActivity.this, CartActivity.class);
+                    startActivity(intent);
+                }
+
 
             }
         });
@@ -191,26 +195,42 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
 
         if (id==R.id.nav_cart) {
-            Intent intent = new Intent(HomeActivity.this, CartActivity.class);
-            startActivity(intent);
+
+            if(!type.equals("Admin")){
+                Intent intent = new Intent(HomeActivity.this, CartActivity.class);
+                startActivity(intent);
+            }
+
 
         } else if (id==R.id.nav_search) {
-            Intent intent = new Intent(HomeActivity.this, SearchProductsActivity.class);
-            startActivity(intent);
+
+            if(!type.equals("Admin")){
+                Intent intent = new Intent(HomeActivity.this, SearchProductsActivity.class);
+                startActivity(intent);
+            }
+
 
         } else if (id==R.id.nav_categories) {
 
         } else if (id==R.id.nav_settings) {
-            Intent intent = new Intent(HomeActivity.this, SettingsActivity.class);
-            startActivity(intent);
+
+            if(!type.equals("Admin")){
+                Intent intent = new Intent(HomeActivity.this, SettingsActivity.class);
+                startActivity(intent);
+            }
+
 
         } else if (id==R.id.nav_logout) {
-            Paper.book().destroy();
 
-            Intent intent = new Intent(HomeActivity.this, MainActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            startActivity(intent);
-            finish();
+            if(!type.equals("Admin")){
+                Paper.book().destroy();
+
+                Intent intent = new Intent(HomeActivity.this, MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+                finish();
+            }
+
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
