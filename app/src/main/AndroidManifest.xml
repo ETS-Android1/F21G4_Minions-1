@@ -15,13 +15,13 @@
         android:theme="@style/Theme.F21G4_Minions"
         tools:replace="android:theme">
         <activity
-            android:name=".ResetPasswordActivity"
+            android:name=".Buyers.ResetPasswordActivity"
             android:exported="true" />
         <activity
             android:name=".Admin.AdminMaintainProductsActivity"
             android:exported="false" />
         <activity
-            android:name=".SearchProductsActivity"
+            android:name=".Buyers.SearchProductsActivity"
             android:exported="false" />
         <activity
             android:name=".Admin.AdminUserProductsActivity"
@@ -30,16 +30,16 @@
             android:name=".Admin.AdminNewOrdersActivity"
             android:exported="false" />
         <activity
-            android:name=".ConfirmFinalOrderActivity"
+            android:name=".Buyers.ConfirmFinalOrderActivity"
             android:exported="false" />
         <activity
-            android:name=".ProductDetailsActivity"
+            android:name=".Buyers.ProductDetailsActivity"
             android:exported="true" />
         <activity
-            android:name=".SettingsActivity"
+            android:name=".Buyers.SettingsActivity"
             android:exported="false" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".Buyers.HomeActivity"
             android:exported="false"
             android:label="@string/title_activity_home"
             android:theme="@style/Theme.F21G4_Minions.NoActionBar" />
@@ -50,22 +50,22 @@
             android:name=".Admin.AdminAddNewProductActivity"
             android:exported="false" />
         <activity
-            android:name=".RegisterActivity"
+            android:name=".Buyers.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".Login_Activity"
+            android:name=".Buyers.Login_Activity"
             android:exported="false" />
         <activity
             android:name=".OnBoardingActivity"
             android:exported="true" />
         <activity
-            android:name=".CartActivity"
+            android:name=".Buyers.CartActivity"
             android:exported="true" />
         <activity
             android:name=".LoginActivity2"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Buyers.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

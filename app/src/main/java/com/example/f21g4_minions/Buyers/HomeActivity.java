@@ -1,4 +1,4 @@
-package com.example.f21g4_minions;
+package com.example.f21g4_minions.Buyers;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.example.f21g4_minions.Admin.AdminMaintainProductsActivity;
 import com.example.f21g4_minions.Model.Products;
 import com.example.f21g4_minions.Prevalent.Prevalent;
+import com.example.f21g4_minions.R;
 import com.example.f21g4_minions.ViewHolder.ProductViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;

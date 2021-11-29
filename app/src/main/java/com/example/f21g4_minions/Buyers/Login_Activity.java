@@ -1,4 +1,4 @@
-package com.example.f21g4_minions;
+package com.example.f21g4_minions.Buyers;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.example.f21g4_minions.Admin.AdminCategoryActivity;
 import com.example.f21g4_minions.Model.Users;
 import com.example.f21g4_minions.Prevalent.Prevalent;
+import com.example.f21g4_minions.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
