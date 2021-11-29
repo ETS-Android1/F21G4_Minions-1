@@ -40,7 +40,7 @@ public class    CartActivity extends AppCompatActivity {
     private Button nextProcessBtn;
     private TextView txtTotalAmount, txtMsg1;
 
-    private int overTotalPrice=0;
+    private double overTotalPrice=0;
 
 
 
@@ -93,7 +93,7 @@ public class    CartActivity extends AppCompatActivity {
                 cartViewHolder.txtProductName.setText("Product: "+model.getPname());
                 cartViewHolder.txtProductPrice.setText("Price: "+model.getPrice()+"$");
 
-                int oneTypeProductTPrice = ((Integer.valueOf(model.getPrice()))*(Integer.valueOf(model.getQuantity())));
+                double oneTypeProductTPrice = ((Double.parseDouble(model.getPrice()))*(Double.parseDouble(model.getQuantity())));
 
                 overTotalPrice = overTotalPrice + oneTypeProductTPrice;
 
