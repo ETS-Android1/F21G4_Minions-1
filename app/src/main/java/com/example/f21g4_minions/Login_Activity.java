@@ -67,37 +67,28 @@ public class Login_Activity extends AppCompatActivity {
         });
 
 
-        ForgetPasswordLink.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Login_Activity.this, ResetPasswordActivity.class);
-                intent.putExtra("login","check");
-                startActivity(intent);
-            }
+        ForgetPasswordLink.setOnClickListener(view -> {
+            Intent intent = new Intent(Login_Activity.this, ResetPasswordActivity.class);
+            intent.putExtra("check","login");
+            startActivity(intent);
         });
 
-        AdminLink.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                LoginButton.setText("Login Admin");
-                AdminLink.setVisibility(View.INVISIBLE);
-                NotAdminLink.setVisibility(View.VISIBLE);
-                //We are creating different database for the admins
-                parentDBName = "Admins";
+        AdminLink.setOnClickListener(view -> {
+            LoginButton.setText("Login Admin");
+            AdminLink.setVisibility(View.INVISIBLE);
+            NotAdminLink.setVisibility(View.VISIBLE);
+            //We are creating different database for the admins
+            parentDBName = "Admins";
 
-            }
         });
 
-        NotAdminLink.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                LoginButton.setText("Login");
-                AdminLink.setVisibility(View.VISIBLE);
-                NotAdminLink.setVisibility(View.INVISIBLE);
-                //We are creating different database for the admins
-                parentDBName = "Users";
+        NotAdminLink.setOnClickListener(view -> {
+            LoginButton.setText("Login");
+            AdminLink.setVisibility(View.VISIBLE);
+            NotAdminLink.setVisibility(View.INVISIBLE);
+            //We are creating different database for the admins
+            parentDBName = "Users";
 
-            }
         });
     }
 
