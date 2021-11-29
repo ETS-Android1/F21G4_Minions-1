@@ -9,11 +9,13 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.f21g4_minions.Model.Users;
 import com.example.f21g4_minions.Prevalent.Prevalent;
 import com.example.f21g4_minions.R;
+import com.example.f21g4_minions.Sellers.SellerRegistrationActivity;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -26,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button joinNowButton, LoginButton;
     private ProgressDialog loadingBar;
+    private TextView sellerBegin;
 
 
     @Override
@@ -37,13 +40,23 @@ public class MainActivity extends AppCompatActivity {
         LoginButton = findViewById(R.id.main_login_btn);
         loadingBar = new ProgressDialog(this);
 
+        sellerBegin = findViewById(R.id.seller_begin);
 
-        Paper.init(this);
+
+        Paper.init(MainActivity.this);
 
         LoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, Login_Activity.class);
+                startActivity(intent);
+            }
+        });
+
+        sellerBegin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, SellerRegistrationActivity.class);
                 startActivity(intent);
             }
         });
