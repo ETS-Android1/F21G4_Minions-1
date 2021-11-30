@@ -62,6 +62,9 @@
     <!-- Activity Admin New Orders -->
     <string name="activityAdminNewOrders_adminNewOrderTitle_text">New Orders</string>
 
+    <!-- Activity Admin User Products -->
+    <string name="activityAdminUserProducts_adminUserProductsTitle_text">Products</string>
+
 
 
 </resources>
