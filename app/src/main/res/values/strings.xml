@@ -173,6 +173,32 @@
     <string name="cartItemsLayout_cartProductQuantity_text">Product Quantity</string>
     <string name="cartItemsLayout_cartProductPrice_text">Product Price</string>
 
+    <!-- Layout Cart Item -->
+    <string name="layoutCartItem_txtProductNameinCart_text">TextView</string>
+    <string name="layoutCartItem_txtProductQtyinCart_text">TextView</string>
+    <string name="layoutCartItem_txtProductPriceinCart_text">TextView</string>
 
+    <!-- Layout Product -->
+    <string name="layoutProduct_txtProductName_text">TextView</string>
+    <string name="layoutProduct_txtProductCategory_text">TextView</string>
+    <string name="layoutProduct_txtProductDescription_text">TextView</string>
+    <string name="layoutProduct_txtProductPrice_text">TextView</string>
 
+    <!-- Layout Wishlist Item -->
+    <string name="layoutWishlistItem_txtProductNameinWishlist_text">TextView</string>
+    <string name="layoutWishlistItem_txtProductQtyinWishlist_text">TextView</string>
+    <string name="layoutWishlistItem_txtProductPriceinWishlist_text">TextView</string>
+
+    <!-- Orders Layout -->
+    <string name="ordersLayout_orderUserName_text">User Name</string>
+    <string name="ordersLayout_orderPhoneNumber_text">Phone Number</string>
+    <string name="ordersLayout_orderTotalPrice_text">Total Price</string>
+    <string name="ordersLayout_orderAddressCity_text">Address, City</string>
+    <string name="ordersLayout_orderDateTime_text">Date Time</string>
+    <string name="ordersLayout_showAllProductsBtn_text">Show This Order Products</string>
+
+    <!-- Products Items Layout -->
+    <string name="productsItemsLayout_productName_text">Product Name</string>
+    <string name="productsItemsLayout_productPrice_text">Product Price</string>
+    <string name="productsItemsLayout_productDescription_text">Product Description</string>
 </resources>

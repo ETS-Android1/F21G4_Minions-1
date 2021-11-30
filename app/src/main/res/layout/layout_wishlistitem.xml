@@ -16,19 +16,19 @@
         android:layout_width="0dp"
         android:layout_height="100dp"
         android:layout_weight="1"
-        android:text="TextView" />
+        android:text="@string/layoutWishlistItem_txtProductNameinWishlist_text" />
 
     <TextView
         android:id="@+id/txtProductQtyinWishlist"
         android:layout_width="0dp"
         android:layout_height="100dp"
         android:layout_weight="1"
-        android:text="TextView" />
+        android:text="@string/layoutWishlistItem_txtProductQtyinWishlist_text" />
 
     <TextView
         android:id="@+id/txtProductPriceinWishlist"
         android:layout_width="0dp"
         android:layout_height="100dp"
         android:layout_weight="1"
-        android:text="TextView" />
+        android:text="@string/layoutWishlistItem_txtProductPriceinWishlist_text" />
 </LinearLayout>

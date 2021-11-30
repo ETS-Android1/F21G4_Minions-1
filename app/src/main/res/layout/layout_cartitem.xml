@@ -16,19 +16,19 @@
         android:layout_width="0dp"
         android:layout_height="100dp"
         android:layout_weight="1"
-        android:text="TextView" />
+        android:text="@string/layoutCartItem_txtProductNameinCart_text" />
 
     <TextView
         android:id="@+id/txtProductQtyinCart"
         android:layout_width="0dp"
         android:layout_height="100dp"
         android:layout_weight="1"
-        android:text="TextView" />
+        android:text="@string/layoutCartItem_txtProductQtyinCart_text" />
 
     <TextView
         android:id="@+id/txtProductPriceinCart"
         android:layout_width="0dp"
         android:layout_height="100dp"
         android:layout_weight="1"
-        android:text="TextView" />
+        android:text="@string/layoutCartItem_txtProductPriceinCart_text" />
 </LinearLayout>
