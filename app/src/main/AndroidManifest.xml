@@ -54,10 +54,10 @@
             android:label="@string/title_activity_home"
             android:theme="@style/Theme.F21G4_Minions.NoActionBar" />
         <activity
-            android:name=".Admin.AdminCategoryActivity"
+            android:name=".Admin.SellerProductCategoryActivity"
             android:exported="false" />
         <activity
-            android:name=".Admin.AdminAddNewProductActivity"
+            android:name=".Sellers.SellerAddNewProductActivity"
             android:exported="false" />
         <activity
             android:name=".Buyers.RegisterActivity"

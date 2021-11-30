@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.example.f21g4_minions.Admin.SellerProductCategoryActivity;
 import com.example.f21g4_minions.Buyers.CartActivity;
 import com.example.f21g4_minions.Buyers.HomeActivity;
 import com.example.f21g4_minions.Buyers.MainActivity;
@@ -58,6 +59,9 @@ public class SellerHomeActivity extends AppCompatActivity implements NavigationV
         } else if (id==R.id.navigation_add) {
 
 //            mTextMessage.setText(R.string.title_add);
+            Intent intentCate = new Intent(SellerHomeActivity.this, SellerProductCategoryActivity.class);
+            startActivity(intentCate);
+            finish();
 
 
         } else if (id==R.id.navigation_logout) {
@@ -65,9 +69,9 @@ public class SellerHomeActivity extends AppCompatActivity implements NavigationV
             mAuth = FirebaseAuth.getInstance();
             mAuth.signOut();
 
-            Intent intent = new Intent(SellerHomeActivity.this, MainActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            startActivity(intent);
+            Intent intentMain = new Intent(SellerHomeActivity.this, MainActivity.class);
+            intentMain.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intentMain);
             finish();
             return true;
 
