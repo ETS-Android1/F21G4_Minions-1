@@ -116,7 +116,7 @@
 
     <!-- Activity Reset password -->
     <string name="activityResetPassword_pageTitle_text">Reset Password</string>
-    <string name="activityResetPassword_findPhoneNumber_hint">Please write your phone number...</string>
+    <string name="activityResetPassword_findPhoneNumber_hint">Please write your phone number</string>
     <string name="activityResetPassword_titleQuestions_text">Answer the Following Security Questions?</string>
     <string name="activityResetPassword_question1_hint">Where your parents met first time?</string>
     <string name="activityResetPassword_question2_hint">Who is your favorite super hero?</string>
@@ -146,5 +146,16 @@
 
     <!-- Activity Seller Product Category -->
     <string name="activitySellerProductCategory_sloganCategory_text">Add New Product</string>
+
+    <!-- Activity Seller Registration -->
+    <string name="activitySellerRegistration_titleSeller_text">Seller Registration Form</string>
+    <string name="activitySellerRegistration_sellerName_hint">Name</string>
+    <string name="activitySellerRegistration_sellerPhone_hint">Phone</string>
+    <string name="activitySellerRegistration_sellerEmail_hint">Email</string>
+    <string name="activitySellerRegistration_sellerAddress_hint">Address</string>
+    <string name="activitySellerRegistration_sellerPassword_hint">Password</string>
+    <string name="activitySellerRegistration_sellerRegisterBtn_text">Register</string>
+    <string name="activitySellerRegistration_sellerAlreadyHaveAccountBtn_text">Already have an account</string>
+
 
 </resources>
