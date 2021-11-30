@@ -128,6 +128,8 @@
     <string name="activitySearchProducts_searchBtn_text">Search</string>
 
 
+
+
     <!-- Activity Seller Add New Product -->
     <string name="activitySellerAddNewProduct_productName_hint">Product Name</string>
     <string name="activitySellerAddNewProduct_productDescription_hint">Product Description</string>
@@ -156,6 +158,18 @@
     <string name="activitySellerRegistration_sellerPassword_hint">Password</string>
     <string name="activitySellerRegistration_sellerRegisterBtn_text">Register</string>
     <string name="activitySellerRegistration_sellerAlreadyHaveAccountBtn_text">Already have an account</string>
+
+    <!-- Activity Settings -->
+    <string name="activitySettings_closeSettingsBtn_text">Close</string>
+    <string name="activitySettings_updateAccountSettingsBtn_text">Update</string>
+    <string name="activitySettings_profileImageChangeBtn_text">Change Profile</string>
+    <string name="activitySettings_settingsPhoneNumber_hint">Phone Number</string>
+    <string name="activitySettings_settingsFullName_hint">Full Name</string>
+    <string name="activitySettings_settingsAddress_hint">Address</string>
+    <string name="activitySettings_securityQuestionsBtn_text">Set Security Questions</string>
+
+
+
 
 
 </resources>

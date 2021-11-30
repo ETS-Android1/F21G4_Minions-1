@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -25,22 +24,27 @@
                     android:id="@+id/close_settings_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Close"
+                    android:text="@string/activitySettings_closeSettingsBtn_text"
                     android:textColor="@android:color/white"
                     android:textSize="17sp"
                     android:textStyle="bold"
-                    android:layout_alignParentLeft="true" />
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    />
 
                 <TextView
                     android:id="@+id/update_account_settings_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Update"
+                    android:text="@string/activitySettings_updateAccountSettingsBtn_text"
                     android:textColor="@android:color/white"
                     android:textSize="17sp"
                     android:textStyle="bold"
                     android:layout_marginRight="10dp"
-                    android:layout_alignParentRight="true" />
+                    android:layout_marginEnd="10dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    />
 
             </RelativeLayout>
 
@@ -64,10 +68,11 @@
         android:id="@+id/profile_image_change_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Change Profile"
+        android:text="@string/activitySettings_profileImageChangeBtn_text"
         android:textSize="17sp"
         android:textStyle="bold"
         android:layout_marginRight="10dp"
+        android:layout_marginEnd="10dp"
         android:layout_marginTop="4dp"
         android:textColor="@android:color/black"
         android:layout_below="@+id/settings_profile_image"
@@ -79,7 +84,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/profile_image_change_btn"
-        android:hint="Phone Number..."
+        android:hint="@string/activitySettings_settingsPhoneNumber_hint"
         android:layout_margin="15dp"
         android:padding="10dp"
         />
@@ -89,7 +94,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/settings_phone_number"
-        android:hint="Full Name..."
+        android:hint="@string/activitySettings_settingsFullName_hint"
         android:layout_margin="15dp"
         android:padding="10dp"
         />
@@ -99,7 +104,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/settings_full_name"
-        android:hint="Address..."
+        android:hint="@string/activitySettings_settingsAddress_hint"
         android:layout_margin="15dp"
         android:padding="10dp"
         />
@@ -109,7 +114,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/settings_address"
-        android:text="Set Security Questions"
+        android:text="@string/activitySettings_securityQuestionsBtn_text"
         android:background="@color/colorPrimary"
         android:textColor="@android:color/white"
         android:layout_margin="15dp"
