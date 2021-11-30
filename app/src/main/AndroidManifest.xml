@@ -71,15 +71,11 @@
         <activity
             android:name=".Buyers.Login_Activity"
             android:exported="false" />
-        <activity
-            android:name=".OnBoardingActivity"
-            android:exported="true" />
+
         <activity
             android:name=".Buyers.CartActivity"
             android:exported="true" />
-        <activity
-            android:name=".LoginActivity2"
-            android:exported="false" />
+
         <activity
             android:name=".Buyers.MainActivity"
             android:exported="true">

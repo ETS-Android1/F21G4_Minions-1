@@ -184,10 +184,7 @@
     <string name="layoutProduct_txtProductDescription_text">TextView</string>
     <string name="layoutProduct_txtProductPrice_text">TextView</string>
 
-    <!-- Layout Wishlist Item -->
-    <string name="layoutWishlistItem_txtProductNameinWishlist_text">TextView</string>
-    <string name="layoutWishlistItem_txtProductQtyinWishlist_text">TextView</string>
-    <string name="layoutWishlistItem_txtProductPriceinWishlist_text">TextView</string>
+
 
     <!-- Orders Layout -->
     <string name="ordersLayout_orderUserName_text">User Name</string>
