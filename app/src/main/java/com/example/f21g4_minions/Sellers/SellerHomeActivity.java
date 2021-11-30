@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.example.f21g4_minions.Buyers.MainActivity;
 import com.example.f21g4_minions.Model.Products;
 import com.example.f21g4_minions.R;
@@ -30,7 +31,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.Objects;
 
-public class SellerHomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class SellerHomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private ActivitySellerHomeBinding binding;
     private RecyclerView recyclerView;
@@ -72,7 +73,7 @@ public class SellerHomeActivity extends AppCompatActivity implements NavigationV
 
         FirebaseRecyclerOptions<Products> options = new FirebaseRecyclerOptions.Builder<Products>()
                 .setQuery(unverifiedProductsRef.orderByChild("sid")
-                        .equalTo(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid()),Products.class)
+                        .equalTo(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid()), Products.class)
                 .build();
 
         FirebaseRecyclerAdapter<Products, ItemViewHolder> adapter = new FirebaseRecyclerAdapter<Products, ItemViewHolder>(options) {
@@ -80,25 +81,25 @@ public class SellerHomeActivity extends AppCompatActivity implements NavigationV
             protected void onBindViewHolder(@NonNull ItemViewHolder productViewHolder, int i, @NonNull Products products) {
                 productViewHolder.txtProductName.setText(products.getName());
                 productViewHolder.txtProductDescription.setText(products.getDescription());
-                productViewHolder.txtProductDescription.setText("State: " + products.getProductState());
-                productViewHolder.txtProductPrice.setText("Price = "+ products.getPrice()+ "$");
+                productViewHolder.txtProductStatus.setText("State: " + products.getProductState());
+                productViewHolder.txtProductPrice.setText("Price = " + products.getPrice() + "$");
                 Picasso.get().load(products.getImage()).into(productViewHolder.imageView);
 
                 productViewHolder.itemView.setOnClickListener(view -> {
-                    final String productID= products.getPid();
+                    final String productID = products.getPid();
 
                     CharSequence[] options1 = new CharSequence[]{
-                            "Yes","No"
+                            "Yes", "No"
                     };
 
                     AlertDialog.Builder builder = new AlertDialog.Builder(SellerHomeActivity.this);
                     builder.setTitle("Do you want to delete this product?");
                     builder.setItems(options1, (dialogInterface, i1) -> {
-                        if(i1 ==0){
+                        if (i1 == 0) {
                             deleteProduct(productID);
                         }
-                        if(i1 ==1){
-
+                        if (i1 == 1) {
+                            // TODO when seller clicks no to delete the item what action needs to be taken
                         }
                     });
                     builder.show();
@@ -129,15 +130,14 @@ public class SellerHomeActivity extends AppCompatActivity implements NavigationV
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
 
-        if (id==R.id.navigation_home) {
+        if (id == R.id.navigation_home) {
 //            mTextMessage.setText(R.string.title_home);
             Intent intentHome = new Intent(SellerHomeActivity.this, SellerHomeActivity.class);
             startActivity(intentHome);
             return true;
 
 
-
-        } else if (id==R.id.navigation_add) {
+        } else if (id == R.id.navigation_add) {
 
 //            mTextMessage.setText(R.string.title_add);
             Intent intentCate = new Intent(SellerHomeActivity.this, SellerProductCategoryActivity.class);
@@ -145,7 +145,7 @@ public class SellerHomeActivity extends AppCompatActivity implements NavigationV
             finish();
 
 
-        } else if (id==R.id.navigation_logout) {
+        } else if (id == R.id.navigation_logout) {
             final FirebaseAuth mAuth;
             mAuth = FirebaseAuth.getInstance();
             mAuth.signOut();
