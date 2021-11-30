@@ -134,4 +134,7 @@
     <string name="activitySellerAddNewProduct_productPrice_hint">Product Price</string>
     <string name="activitySellerAddNewProduct_addNewProducts_hint">Add Product</string>
 
+    <!-- Activity Seller Home -->
+    <string name="activitySellerHome_sellerHomeTitle_text">My all products</string>
+
 </resources>
