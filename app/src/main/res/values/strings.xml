@@ -97,4 +97,11 @@
     <!-- Activity On Boarding -->
     <string name="activityOnBoarding_getStartedBtn_text">Lets get started</string>
 
+
+    <!-- Activity Product Details -->
+    <string name="activityProductDetails_productNameDetails_text">Product Name</string>
+    <string name="activityProductDetails_productDescriptionDetails_text">Product Description</string>
+    <string name="activityProductDetails_productPriceDetails_text">Product Price</string>
+    <string name="activityProductDetails_pdAddToCartButton_text">Add to Cart</string>
+
 </resources>
