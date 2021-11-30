@@ -45,6 +45,15 @@
     <!-- Activity Admin Check New Products -->
     <string name="activityAdminCheckNewProducts_adminCheckNewProductTitle_text">Approve new products</string>
 
+    <!-- Activity Admin Home -->
+    <string name="activityAdminHome_adminWelcome_text">Welcome Dear Admin</string>
+    <string name="activityAdminHome_maintainBtn_text">Maintain Products</string>
+    <string name="activityAdminHome_checkOrdersBtn_text">Check New Orders</string>
+    <string name="activityAdminHome_checkApproveOrdersBtn_text">Check and Approve new Products</string>
+    <string name="activityAdminHome_adminLogoutBtn_text">Check and Approve new Products</string>
+
+
+
 
 
 </resources>

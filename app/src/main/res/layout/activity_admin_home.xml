@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,32 +10,28 @@
         android:id="@+id/admin_welcome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Welcome Dear Admin"
-        android:textAlignment="gravity"
-        android:gravity="center"
-        android:textSize="18dp"
-        android:textColor="@color/textHeading"
-        android:textStyle="bold"
         android:layout_marginTop="10dp"
-
-
-/>
+        android:gravity="center"
+        android:text="@string/activityAdminHome_adminWelcome_text"
+        android:textAlignment="gravity"
+        android:textColor="@color/textHeading"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/maintain_btn"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_below="@+id/admin_welcome"
-        android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="10dp"
         android:background="@color/textHeading"
-        android:text="Maintain Products"
+        android:text="@string/activityAdminHome_maintainBtn_text"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="20dp" />
-
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/check_orders_btn"
@@ -50,10 +45,10 @@
         android:layout_marginRight="20dp"
         android:layout_marginBottom="20dp"
         android:background="@color/textHeading"
-        android:text="Check New Orders"
+        android:text="@string/activityAdminHome_checkOrdersBtn_text"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="20dp" />
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/check_approve_orders_btn"
@@ -67,10 +62,10 @@
         android:layout_marginRight="20dp"
         android:layout_marginBottom="20dp"
         android:background="@color/textHeading"
-        android:text="Check and Approve new Products"
+        android:text="@string/activityAdminHome_checkApproveOrdersBtn_text"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="20dp" />
+        android:textSize="20sp" />
 
 
     <Button
@@ -78,17 +73,14 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_alignParentBottom="true"
-
-        android:background="@color/textHeading"
-        android:text="Logout"
-        android:textColor="@color/white"
-        android:textSize="20dp"
-        android:textAllCaps="false"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="20dp"
-
-        />
+        android:background="@color/textHeading"
+        android:text="@string/activityAdminHome_adminLogoutBtn_text"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
 
 
 </RelativeLayout>
