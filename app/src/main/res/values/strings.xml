@@ -137,4 +137,10 @@
     <!-- Activity Seller Home -->
     <string name="activitySellerHome_sellerHomeTitle_text">My all products</string>
 
+    <!-- Activity Seller Login -->
+    <string name="activitySellerLogin_titleSeller_text">Seller Login Form</string>
+    <string name="activitySellerLogin_sellerLoginEmail_hint">Email</string>
+    <string name="activitySellerLogin_sellerLoginPassword_hint">Password</string>
+    <string name="activitySellerLogin_sellerLoginBtn_text">Login</string>
+
 </resources>
