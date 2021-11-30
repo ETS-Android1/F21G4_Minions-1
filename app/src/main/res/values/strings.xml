@@ -36,11 +36,14 @@
     <string name="title_add">Add</string>
     <string name="title_logout">Logout</string>
     
-<!-- Seller Item View -->
+    <!-- Seller Item View -->
     <string name="sellerItemView_sellerProductName_text">Product Name</string>
     <string name="sellerItemView_sellerProductState_text">Product State</string>
     <string name="sellerItemView_productSellerPrice_text">Product Price</string>
     <string name="sellerItemView_productSellerDescription_text">Product Description</string>
+
+    <!-- Activity Admin Check New Products -->
+    <string name="activityAdminCheckNewProducts_adminCheckNewProductTitle_text">Approve new products</string>
 
 
 
