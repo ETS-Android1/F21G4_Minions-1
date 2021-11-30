@@ -143,4 +143,8 @@
     <string name="activitySellerLogin_sellerLoginPassword_hint">Password</string>
     <string name="activitySellerLogin_sellerLoginBtn_text">Login</string>
 
+
+    <!-- Activity Seller Product Category -->
+    <string name="activitySellerProductCategory_sloganCategory_text">Add New Product</string>
+
 </resources>
