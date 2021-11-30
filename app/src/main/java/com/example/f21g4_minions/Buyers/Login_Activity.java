@@ -14,7 +14,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.f21g4_minions.Admin.SellerProductCategoryActivity;
+import com.example.f21g4_minions.Admin.AdminHomeActivity;
+import com.example.f21g4_minions.Sellers.SellerProductCategoryActivity;
 import com.example.f21g4_minions.Model.Users;
 import com.example.f21g4_minions.Prevalent.Prevalent;
 import com.example.f21g4_minions.R;
@@ -142,7 +143,7 @@ public class Login_Activity extends AppCompatActivity {
                             if(parentDBName.equals("Admins")){
                                 Toast.makeText(Login_Activity.this, "Welcome admin Logged in successfully", Toast.LENGTH_LONG).show();
                                 loadingBar.dismiss();
-                                startActivity(new Intent(Login_Activity.this, SellerProductCategoryActivity.class));
+                                startActivity(new Intent(Login_Activity.this, AdminHomeActivity.class));
                             }
                             else if(parentDBName.equals("Users")){
                                 Toast.makeText(Login_Activity.this, "Logged in successfully", Toast.LENGTH_LONG).show();

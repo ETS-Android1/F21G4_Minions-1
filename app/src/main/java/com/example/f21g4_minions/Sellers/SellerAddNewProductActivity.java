@@ -15,7 +15,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.example.f21g4_minions.Admin.SellerProductCategoryActivity;
 import com.example.f21g4_minions.R;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -99,6 +98,7 @@ public class SellerAddNewProductActivity extends AppCompatActivity {
                             sPhone = snapshot.child("phone").getValue().toString();
                             sID = snapshot.child("sid").getValue().toString();
                             sEmail = snapshot.child("email").getValue().toString();
+                            System.out.println(sID+sEmail);
                         }
                     }
 
@@ -201,35 +201,33 @@ public class SellerAddNewProductActivity extends AppCompatActivity {
         productMap.put("category", categoryName);
         productMap.put("price", Price);
         productMap.put("pname", Pname);
-
         productMap.put("sellerName", sName);
         productMap.put("sellerAddress", sAddress);
         productMap.put("sellerPhone", sPhone);
         productMap.put("sellerEmail", sEmail);
         productMap.put("sid", sID);
-
         productMap.put("productState", "Not Approved");
+
+
+
 
         //Now we will store it inside the database
         ProductRef.child(productRandomKey).updateChildren(productMap)
-                    .addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-                            if(task.isSuccessful()){
+                    .addOnCompleteListener((task -> {
+                        if(task.isSuccessful()){
 
-                                startActivity(new Intent(SellerAddNewProductActivity.this, SellerProductCategoryActivity.class));
+                            startActivity(new Intent(SellerAddNewProductActivity.this, SellerHomeActivity.class));
 
-                                loadingBar.dismiss();
-                                Toast.makeText(SellerAddNewProductActivity.this, "Product is added successfully", Toast.LENGTH_SHORT).show();
-                            }
-                            else{
-                                loadingBar.dismiss();
-                                String message = task.getException().toString();
-                                Toast.makeText(SellerAddNewProductActivity.this, "Error: "+message, Toast.LENGTH_SHORT).show();
-
-                            }
+                            loadingBar.dismiss();
+                            Toast.makeText(SellerAddNewProductActivity.this, "Product is added successfully", Toast.LENGTH_SHORT).show();
                         }
-                    });
+                        else{
+                            loadingBar.dismiss();
+                            String message = task.getException().toString();
+                            Toast.makeText(SellerAddNewProductActivity.this, "Error: "+message, Toast.LENGTH_SHORT).show();
+
+                        }
+                    }));
 
     }
 

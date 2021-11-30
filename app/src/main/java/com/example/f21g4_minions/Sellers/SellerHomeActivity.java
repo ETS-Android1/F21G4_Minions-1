@@ -5,12 +5,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import com.example.f21g4_minions.Admin.SellerProductCategoryActivity;
-import com.example.f21g4_minions.Buyers.CartActivity;
-import com.example.f21g4_minions.Buyers.HomeActivity;
 import com.example.f21g4_minions.Buyers.MainActivity;
-import com.example.f21g4_minions.Buyers.SearchProductsActivity;
-import com.example.f21g4_minions.Buyers.SettingsActivity;
 import com.example.f21g4_minions.R;
 import com.example.f21g4_minions.databinding.ActivitySellerHomeBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -19,8 +14,6 @@ import com.google.firebase.auth.FirebaseAuth;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
 
 public class SellerHomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
