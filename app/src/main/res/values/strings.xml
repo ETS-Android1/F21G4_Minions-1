@@ -37,10 +37,10 @@
     <string name="title_logout">Logout</string>
     
 <!-- Seller Item View -->
-    <string name="sellerItemView_seller_product_name_text">Product Name</string>
-    <string name="sellerItemView_seller_product_state_text">Product State</string>
-    <string name="sellerItemView_product_seller_price_text">Product Price</string>
-    <string name="sellerItemView_product_seller_description_text">Product Description</string>
+    <string name="sellerItemView_sellerProductName_text">Product Name</string>
+    <string name="sellerItemView_sellerProductState_text">Product State</string>
+    <string name="sellerItemView_productSellerPrice_text">Product Price</string>
+    <string name="sellerItemView_productSellerDescription_text">Product Description</string>
 
 
 
