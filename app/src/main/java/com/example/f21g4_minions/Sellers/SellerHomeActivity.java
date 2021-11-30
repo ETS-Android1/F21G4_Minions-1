@@ -52,9 +52,7 @@ public class SellerHomeActivity extends AppCompatActivity implements NavigationV
 
         if (id==R.id.navigation_home) {
 //            mTextMessage.setText(R.string.title_home);
-            Intent intent = new Intent(SellerHomeActivity.this, HomeActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            startActivity(intent);
+
 
 
         } else if (id==R.id.navigation_add) {

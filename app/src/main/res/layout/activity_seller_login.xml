@@ -64,7 +64,7 @@
         android:layout_marginTop="22dp"
         android:layout_below="@+id/seller_login_password"
         android:background="@color/textHeading"
-        android:text="Login Button"
+        android:text="Login"
         android:textColor="@android:color/white"
         android:textAllCaps="false"
         android:textSize="16dp"

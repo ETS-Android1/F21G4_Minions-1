@@ -54,7 +54,7 @@ public class SellerRegistrationActivity extends AppCompatActivity {
         sellerLoginBegin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SellerRegistrationActivity.this, SellerHomeActivity.class);
+                Intent intent = new Intent(SellerRegistrationActivity.this, SellerLoginActivity.class);
                 startActivity(intent);
             }
         });
