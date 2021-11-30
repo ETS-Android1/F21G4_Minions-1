@@ -59,6 +59,9 @@
     <string name="activityAdminMaintainProducts_applyChangesBtn_text">Apply Changes</string>
     <string name="activityAdminMaintainProducts_deleteProductBtn_text">Delete This Product</string>
 
+    <!-- Activity Admin New Orders -->
+    <string name="activityAdminNewOrders_adminNewOrderTitle_text">New Orders</string>
+
 
 
 </resources>
