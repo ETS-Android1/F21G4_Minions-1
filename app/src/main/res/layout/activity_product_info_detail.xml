@@ -73,7 +73,7 @@
         android:id="@+id/btnTemp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="@string/activityProductInfoDetails_btnTemp_text"
         app:layout_constraintBottom_toTopOf="@+id/btnAddToWishlist"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.949"

@@ -104,4 +104,13 @@
     <string name="activityProductDetails_productPriceDetails_text">Product Price</string>
     <string name="activityProductDetails_pdAddToCartButton_text">Add to Cart</string>
 
+    <!-- Activity Product Info Details -->
+    <string name="activityProductInfoDetails_btnTemp_text">Button</string>
+
+    <!-- Activity Register -->
+    <string name="activityRegister_registerUsernameInput_hint">Name</string>
+    <string name="activityRegister_registerPhoneNumberInput_hint">Phone Number</string>
+    <string name="activityRegister_registerPasswordInput_hint">Password</string>
+    <string name="activityRegister_registerBtn_text">Create Account</string>
+
 </resources>
