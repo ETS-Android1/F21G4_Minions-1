@@ -1,20 +1,26 @@
 package com.example.f21g4_minions.Admin;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+import com.example.f21g4_minions.Interface.ItemClickListener;
 import com.example.f21g4_minions.Model.Products;
 import com.example.f21g4_minions.R;
 import com.example.f21g4_minions.ViewHolder.ProductViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
@@ -56,8 +62,32 @@ public class AdminCheckNewProductsActivity extends AppCompatActivity {
                 productViewHolder.txtProductPrice.setText("Price = "+ products.getPrice()+ "$");
                 Picasso.get().load(products.getImage()).into(productViewHolder.imageView);
 
-                final Products itemClick = peo;
-                holder
+                productViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        final String productID= products.getPid();
+
+                        CharSequence options[] = new CharSequence[]{
+                                "Yes","No"
+                        };
+
+                        AlertDialog.Builder builder = new AlertDialog.Builder(AdminCheckNewProductsActivity.this);
+                        builder.setTitle("Do you want to approve this product?");
+                        builder.setItems(options, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                if(i==0){
+                                    ChangeProductState(productID);
+                                }
+                                if(i==1){
+
+                                }
+                            }
+                        });
+                        builder.show();
+
+                    }
+                });
 
             }
 
@@ -69,5 +99,23 @@ public class AdminCheckNewProductsActivity extends AppCompatActivity {
                 return holder;
             }
         };
+
+        recyclerView.setAdapter(adapter);
+        adapter.startListening();
+
+    }
+
+    private void ChangeProductState(String productID) {
+
+        unverifiedProductsRef.child(productID)
+                .child("productState")
+                .setValue("Approved")
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                Toast.makeText(AdminCheckNewProductsActivity.this, "The item has been approved", Toast.LENGTH_SHORT).show();
+
+            }
+        });
     }
 }
