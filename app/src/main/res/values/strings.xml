@@ -70,6 +70,14 @@
     <string name="activityCart_msg1_text">Congratulations, Your final order has been placed. You will receive it soon :)</string>
     <string name="activityCart_nextProcessBtn_text">Next</string>
 
+    <!-- Activity Confirm Final Order -->
+    <string name="activityConfirmFinalOrder_txt_text">Please write your shipment details</string>
+    <string name="activityConfirmFinalOrder_shipmentName_hint">Your Name</string>
+    <string name="activityConfirmFinalOrder_shipmentPhoneNumber_hint">Phone Number</string>
+    <string name="activityConfirmFinalOrder_shipmentAddress_hint">Address</string>
+    <string name="activityConfirmFinalOrder_shipmentCity_hint">City</string>
+    <string name="activityConfirmFinalOrder_confirmFinalOrderBtnText">Confirm</string>
+
 
 
 

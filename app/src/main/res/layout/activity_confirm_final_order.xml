@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -18,10 +17,10 @@
         android:layout_marginRight="15dp"
         android:layout_marginBottom="15dp"
         android:gravity="center_horizontal"
-        android:text="Please write your shipment details"
+        android:text="@string/activityConfirmFinalOrder_txt_text"
         android:textAlignment="gravity"
         android:textColor="@color/black"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <EditText
@@ -32,7 +31,7 @@
         android:layout_marginTop="60dp"
         android:layout_marginLeft="18dp"
         android:layout_marginRight="18dp"
-        android:hint="Your Name"
+        android:hint="@string/activityConfirmFinalOrder_shipmentName_hint"
         />
 
     <EditText
@@ -44,7 +43,7 @@
         android:layout_marginTop="5dp"
         android:layout_marginLeft="18dp"
         android:layout_marginRight="18dp"
-        android:hint="Phone Number"
+        android:hint="@string/activityConfirmFinalOrder_shipmentPhoneNumber_hint"
         />
 
     <EditText
@@ -55,7 +54,7 @@
         android:layout_marginTop="5dp"
         android:layout_marginLeft="18dp"
         android:layout_marginRight="18dp"
-        android:hint="Address"
+        android:hint="@string/activityConfirmFinalOrder_shipmentAddress_hint"
         />
 
     <EditText
@@ -66,7 +65,7 @@
         android:layout_marginTop="5dp"
         android:layout_marginLeft="18dp"
         android:layout_marginRight="18dp"
-        android:hint="City"
+        android:hint="@string/activityConfirmFinalOrder_shipmentCity_hint"
         />
 
     <Button
@@ -77,10 +76,10 @@
         android:layout_margin="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="73dp"
-        android:text="Confirm"
+        android:text="@string/activityConfirmFinalOrder_confirmFinalOrderBtnText"
         android:background="@color/textHeading"
         android:textColor="@android:color/white"
-        android:textSize="20dp"
+        android:textSize="20sp"
         />
 
 
