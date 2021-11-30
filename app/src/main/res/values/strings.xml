@@ -93,4 +93,8 @@
     <string name="activityMain_mainLoginBtn_text">Already have an account? Login</string>
     <string name="activityMain_sellerBegin_text">Want to become a seller?</string>
 
+
+    <!-- Activity On Boarding -->
+    <string name="activityOnBoarding_getStartedBtn_text">Lets get started</string>
+
 </resources>
