@@ -30,12 +30,7 @@
         android:id="@+id/admin_products_checklist"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/r3"
-
-        >
-
-
-
+        android:layout_below="@+id/r3">
     </androidx.recyclerview.widget.RecyclerView>
 
 </RelativeLayout>

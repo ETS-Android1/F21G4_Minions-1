@@ -9,10 +9,11 @@ public class Products {
     private String pid;
     private String date;
     private String time;
+    private String productState;
 
     public Products(){ }
 
-    public Products(String name, String description, String price, String image, String category, String pid, String date, String time) {
+    public Products(String name, String description, String price, String image, String category, String pid, String date, String time, String productState) {
         this.name = name;
         this.description = description;
         this.price = price;
@@ -21,6 +22,7 @@ public class Products {
         this.pid = pid;
         this.date = date;
         this.time = time;
+        this.productState = productState;
     }
 
     public String getName() {
@@ -85,5 +87,13 @@ public class Products {
 
     public void setTime(String time) {
         this.time = time;
+    }
+
+    public String getProductState() {
+        return productState;
+    }
+
+    public void setProductState(String productState) {
+        this.productState = productState;
     }
 }

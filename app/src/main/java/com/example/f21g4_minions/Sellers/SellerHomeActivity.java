@@ -1,24 +1,42 @@
 package com.example.f21g4_minions.Sellers;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.f21g4_minions.Admin.AdminCheckNewProductsActivity;
 import com.example.f21g4_minions.Buyers.MainActivity;
+import com.example.f21g4_minions.Model.Products;
 import com.example.f21g4_minions.R;
+import com.example.f21g4_minions.ViewHolder.ItemViewHolder;
+import com.example.f21g4_minions.ViewHolder.ProductViewHolder;
 import com.example.f21g4_minions.databinding.ActivitySellerHomeBinding;
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.squareup.picasso.Picasso;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 public class SellerHomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     private ActivitySellerHomeBinding binding;
-
+    private RecyclerView recyclerView;
+    RecyclerView.LayoutManager layoutManager;
+    private DatabaseReference unverifiedProductsRef;
     private TextView mTextMessage;
 
     @Override
@@ -38,6 +56,75 @@ public class SellerHomeActivity extends AppCompatActivity implements NavigationV
 //                R.id.navigation_home, R.id.navigation_add, R.id.navigation_notifications)
 //                .build();
 
+
+        unverifiedProductsRef = FirebaseDatabase.getInstance().getReference().child("Products");
+
+
+        recyclerView = findViewById(R.id.seller_home_recyclerview);
+        recyclerView.setHasFixedSize(true);
+        layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        FirebaseRecyclerOptions<Products> options = new FirebaseRecyclerOptions.Builder<Products>()
+                .setQuery(unverifiedProductsRef.orderByChild("sid")
+                        .equalTo(FirebaseAuth.getInstance().getCurrentUser().getUid()),Products.class)
+                .build();
+
+        FirebaseRecyclerAdapter<Products, ItemViewHolder> adapter = new FirebaseRecyclerAdapter<Products, ItemViewHolder>(options) {
+            @Override
+            protected void onBindViewHolder(@NonNull ItemViewHolder productViewHolder, int i, @NonNull Products products) {
+                productViewHolder.txtProductName.setText(products.getName());
+                productViewHolder.txtProductDescription.setText(products.getDescription());
+               // productViewHolder.txtProductDescription.setText(products.getDescription());
+                productViewHolder.txtProductPrice.setText("Price = "+ products.getPrice()+ "$");
+                Picasso.get().load(products.getImage()).into(productViewHolder.imageView);
+
+                productViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        final String productID= products.getPid();
+
+                        CharSequence options[] = new CharSequence[]{
+                                "Yes","No"
+                        };
+
+                        AlertDialog.Builder builder = new AlertDialog.Builder(SellerHomeActivity.this);
+                        builder.setTitle("Do you want to delete this product?");
+                        builder.setItems(options, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                if(i==0){
+                                    ChangeProductState(productID);
+                                }
+                                if(i==1){
+
+                                }
+                            }
+                        });
+                        builder.show();
+
+                    }
+                });
+
+            }
+
+            @NonNull
+            @Override
+            public ItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.seller_item_view, parent, false);
+                ItemViewHolder holder = new ItemViewHolder(view);
+                return holder;
+            }
+        };
+
+        recyclerView.setAdapter(adapter);
+        adapter.startListening();
     }
 
     @Override
