@@ -1,6 +1,5 @@
 package com.example.f21g4_minions.Sellers;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,13 +7,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
-import com.example.f21g4_minions.Admin.AdminCheckNewProductsActivity;
+import android.widget.Toast;
 import com.example.f21g4_minions.Buyers.MainActivity;
 import com.example.f21g4_minions.Model.Products;
 import com.example.f21g4_minions.R;
 import com.example.f21g4_minions.ViewHolder.ItemViewHolder;
-import com.example.f21g4_minions.ViewHolder.ProductViewHolder;
 import com.example.f21g4_minions.databinding.ActivitySellerHomeBinding;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -30,6 +27,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.Objects;
 
 public class SellerHomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
@@ -73,7 +72,7 @@ public class SellerHomeActivity extends AppCompatActivity implements NavigationV
 
         FirebaseRecyclerOptions<Products> options = new FirebaseRecyclerOptions.Builder<Products>()
                 .setQuery(unverifiedProductsRef.orderByChild("sid")
-                        .equalTo(FirebaseAuth.getInstance().getCurrentUser().getUid()),Products.class)
+                        .equalTo(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid()),Products.class)
                 .build();
 
         FirebaseRecyclerAdapter<Products, ItemViewHolder> adapter = new FirebaseRecyclerAdapter<Products, ItemViewHolder>(options) {
@@ -81,35 +80,29 @@ public class SellerHomeActivity extends AppCompatActivity implements NavigationV
             protected void onBindViewHolder(@NonNull ItemViewHolder productViewHolder, int i, @NonNull Products products) {
                 productViewHolder.txtProductName.setText(products.getName());
                 productViewHolder.txtProductDescription.setText(products.getDescription());
-               // productViewHolder.txtProductDescription.setText(products.getDescription());
+                productViewHolder.txtProductDescription.setText("State: " + products.getProductState());
                 productViewHolder.txtProductPrice.setText("Price = "+ products.getPrice()+ "$");
                 Picasso.get().load(products.getImage()).into(productViewHolder.imageView);
 
-                productViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        final String productID= products.getPid();
+                productViewHolder.itemView.setOnClickListener(view -> {
+                    final String productID= products.getPid();
 
-                        CharSequence options[] = new CharSequence[]{
-                                "Yes","No"
-                        };
+                    CharSequence[] options1 = new CharSequence[]{
+                            "Yes","No"
+                    };
 
-                        AlertDialog.Builder builder = new AlertDialog.Builder(SellerHomeActivity.this);
-                        builder.setTitle("Do you want to delete this product?");
-                        builder.setItems(options, new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                if(i==0){
-                                    ChangeProductState(productID);
-                                }
-                                if(i==1){
+                    AlertDialog.Builder builder = new AlertDialog.Builder(SellerHomeActivity.this);
+                    builder.setTitle("Do you want to delete this product?");
+                    builder.setItems(options1, (dialogInterface, i1) -> {
+                        if(i1 ==0){
+                            deleteProduct(productID);
+                        }
+                        if(i1 ==1){
 
-                                }
-                            }
-                        });
-                        builder.show();
+                        }
+                    });
+                    builder.show();
 
-                    }
                 });
 
             }
@@ -118,13 +111,18 @@ public class SellerHomeActivity extends AppCompatActivity implements NavigationV
             @Override
             public ItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
                 View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.seller_item_view, parent, false);
-                ItemViewHolder holder = new ItemViewHolder(view);
-                return holder;
+                return new ItemViewHolder(view);
             }
         };
 
         recyclerView.setAdapter(adapter);
         adapter.startListening();
+    }
+
+    private void deleteProduct(String productID) {
+        unverifiedProductsRef.child(productID)
+                .removeValue()
+                .addOnCompleteListener(task -> Toast.makeText(SellerHomeActivity.this, "The item has been removed successfully", Toast.LENGTH_SHORT).show());
     }
 
     @Override
@@ -133,6 +131,9 @@ public class SellerHomeActivity extends AppCompatActivity implements NavigationV
 
         if (id==R.id.navigation_home) {
 //            mTextMessage.setText(R.string.title_home);
+            Intent intentHome = new Intent(SellerHomeActivity.this, SellerHomeActivity.class);
+            startActivity(intentHome);
+            return true;
 
 
 
