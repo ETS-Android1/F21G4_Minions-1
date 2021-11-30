@@ -78,8 +78,14 @@
     <string name="activityConfirmFinalOrder_shipmentCity_hint">City</string>
     <string name="activityConfirmFinalOrder_confirmFinalOrderBtnText">Confirm</string>
 
-
-
+    <!-- Activity Login 2 -->
+    <string name="activityLogin2_loginPasswordInput_hint">Password</string>
+    <string name="activityLogin2_loginPhoneNumberInput_hint">Phone Number</string>
+    <string name="activityLogin2_rememberCheckbox_text">Remember me</string>
+    <string name="activityLogin2_forgetPasswordLink_text">Forget Password?</string>
+    <string name="activityLogin2_loginBtn_text">Login</string>
+    <string name="activityLogin2_adminPanelLink_text">I\'m an Admin?</string>
+    <string name="activityLogin2_notAdminPanelLink_text">I\'m not an Admin?</string>
 
 
 
