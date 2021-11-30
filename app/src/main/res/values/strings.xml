@@ -168,7 +168,10 @@
     <string name="activitySettings_settingsAddress_hint">Address</string>
     <string name="activitySettings_securityQuestionsBtn_text">Set Security Questions</string>
 
-
+    <!-- Cart Items Layout -->
+    <string name="cartItemsLayout_cartProductName_text">Product Name</string>
+    <string name="cartItemsLayout_cartProductQuantity_text">Product Quantity</string>
+    <string name="cartItemsLayout_cartProductPrice_text">Product Price</string>
 
 
 
