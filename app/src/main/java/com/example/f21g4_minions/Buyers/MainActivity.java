@@ -15,7 +15,10 @@ import android.widget.Toast;
 import com.example.f21g4_minions.Model.Users;
 import com.example.f21g4_minions.Prevalent.Prevalent;
 import com.example.f21g4_minions.R;
+import com.example.f21g4_minions.Sellers.SellerHomeActivity;
 import com.example.f21g4_minions.Sellers.SellerRegistrationActivity;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -85,7 +88,21 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void AllowAccess(final String phone,final String password) {
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+
+        if (firebaseUser != null) {
+            Intent intent = new Intent(MainActivity.this, SellerHomeActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
+            finish();
+        }
+    }
+
+    private void AllowAccess(final String phone, final String password) {
 
         final DatabaseReference Rootref;
         Rootref = FirebaseDatabase.getInstance().getReference();
