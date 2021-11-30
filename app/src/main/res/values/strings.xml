@@ -65,6 +65,14 @@
     <!-- Activity Admin User Products -->
     <string name="activityAdminUserProducts_adminUserProductsTitle_text">Products</string>
 
+    <!-- Activity Cart -->
+    <string name="activityCart_totalPrice_text">Total Amount = </string>
+    <string name="activityCart_msg1_text">Congratulations, Your final order has been placed. You will receive it soon :)</string>
+    <string name="activityCart_nextProcessBtn_text">Next</string>
+
+
+
+
 
 
 </resources>
