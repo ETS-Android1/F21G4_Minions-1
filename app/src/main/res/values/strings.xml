@@ -113,4 +113,13 @@
     <string name="activityRegister_registerPasswordInput_hint">Password</string>
     <string name="activityRegister_registerBtn_text">Create Account</string>
 
+
+    <!-- Activity Reset password -->
+    <string name="activityResetPassword_pageTitle_text">Reset Password</string>
+    <string name="activityResetPassword_findPhoneNumber_hint">Please write your phone number...</string>
+    <string name="activityResetPassword_titleQuestions_text">Answer the Following Security Questions?</string>
+    <string name="activityResetPassword_question1_hint">Where your parents met first time?</string>
+    <string name="activityResetPassword_question2_hint">Who is your favorite super hero?</string>
+    <string name="activityResetPassword_verifyBtn_text">Verify</string>
+
 </resources>
