@@ -87,6 +87,10 @@
     <string name="activityLogin2_adminPanelLink_text">I\'m an Admin?</string>
     <string name="activityLogin2_notAdminPanelLink_text">I\'m not an Admin?</string>
 
-
+    <!-- Activity Main -->
+    <string name="activityMain_appSlogan_text">Find, Discover, Choose and Buy anything online.</string>
+    <string name="activityMain_mainJoinNowBtn_text">Join Now</string>
+    <string name="activityMain_mainLoginBtn_text">Already have an account? Login</string>
+    <string name="activityMain_sellerBegin_text">Want to become a seller?</string>
 
 </resources>
