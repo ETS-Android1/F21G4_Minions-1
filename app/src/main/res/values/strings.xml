@@ -122,4 +122,9 @@
     <string name="activityResetPassword_question2_hint">Who is your favorite super hero?</string>
     <string name="activityResetPassword_verifyBtn_text">Verify</string>
 
+
+    <!-- Activity Search Product -->
+    <string name="activitySearchProducts_searchProductName_hint">Product Name</string>
+    <string name="activitySearchProducts_searchBtn_text">Search</string>
+
 </resources>
