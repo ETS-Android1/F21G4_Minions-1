@@ -35,8 +35,13 @@
     <string name="title_home">Home</string>
     <string name="title_add">Add</string>
     <string name="title_logout">Logout</string>
+    
+<!-- Seller Item View -->
+    <string name="sellerItemView_seller_product_name_text">Product Name</string>
+    <string name="sellerItemView_seller_product_state_text">Product State</string>
+    <string name="sellerItemView_product_seller_price_text">Product Price</string>
+    <string name="sellerItemView_product_seller_description_text">Product Description</string>
 
-    <!-- SellerHomeActivity Strings -->
 
 
 </resources>
