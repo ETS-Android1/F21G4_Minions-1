@@ -127,4 +127,11 @@
     <string name="activitySearchProducts_searchProductName_hint">Product Name</string>
     <string name="activitySearchProducts_searchBtn_text">Search</string>
 
+
+    <!-- Activity Seller Add New Product -->
+    <string name="activitySellerAddNewProduct_productName_hint">Product Name</string>
+    <string name="activitySellerAddNewProduct_productDescription_hint">Product Description</string>
+    <string name="activitySellerAddNewProduct_productPrice_hint">Product Price</string>
+    <string name="activitySellerAddNewProduct_addNewProducts_hint">Add Product</string>
+
 </resources>
