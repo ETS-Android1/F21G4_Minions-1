@@ -29,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
-            android:text="Lets get started"
+            android:text="@string/activityOnBoarding_getStartedBtn_text"
             android:visibility="invisible" />
 
         <LinearLayout
@@ -45,6 +45,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:background="#00000000"
             android:paddingBottom="30dp"

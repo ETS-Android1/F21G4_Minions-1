@@ -20,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/product_image_details"
-        android:text="Product Name"
+        android:text="@string/activityProductDetails_productNameDetails_text"
         android:textColor="@android:color/black"
         android:textStyle="bold"
         android:textSize="18sp"
@@ -33,7 +33,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/product_name_details"
-        android:text="Product Description"
+        android:text="@string/activityProductDetails_productDescriptionDetails_text"
         android:textColor="@android:color/black"
         android:textStyle="bold"
         android:textSize="16sp"
@@ -46,7 +46,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/product_description_details"
-        android:text="Product Price"
+        android:text="@string/activityProductDetails_productPriceDetails_text"
         android:textColor="@android:color/black"
         android:textStyle="bold"
         android:textSize="18sp"
@@ -60,11 +60,12 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/product_price_details"
         android:layout_centerHorizontal="true"
-
         android:layout_marginTop="10dp"
         android:elevation="6dp"
         app:finalNumber="10"
-        app:textSize="16dp"></com.cepheuen.elegantnumberbutton.view.ElegantNumberButton>
+        app:textSize="16sp">
+
+    </com.cepheuen.elegantnumberbutton.view.ElegantNumberButton>
 
     <Button
         android:id="@+id/pd_add_to_cart_button"
@@ -73,7 +74,7 @@
         android:background="@color/textHeading"
         android:layout_margin="15dp"
         android:layout_alignParentBottom="true"
-        android:text="Add to Cart"
+        android:text="@string/activityProductDetails_pdAddToCartButton_text"
         android:textColor="@android:color/white"
         android:textSize="18sp"
         />

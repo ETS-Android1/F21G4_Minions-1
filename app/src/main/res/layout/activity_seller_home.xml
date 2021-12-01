@@ -15,10 +15,11 @@
         tools:ignore="MissingConstraints">
 
         <TextView
+            android:id="@+id/sellerHomeTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:text="My all products"
+            android:text="@string/activitySellerHome_sellerHomeTitle_text"
             android:textColor="@android:color/white"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -30,7 +31,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/nav_view"
-        android:layout_below="@+id/rel1"></androidx.recyclerview.widget.RecyclerView>
+        android:layout_below="@+id/rel1">
+
+    </androidx.recyclerview.widget.RecyclerView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"
