@@ -70,7 +70,7 @@ public class AdminMaintainProductsActivity extends AppCompatActivity {
         productsRef.removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
-                startActivity(new Intent(AdminMaintainProductsActivity.this, SellerProductCategoryActivity.class));
+                startActivity(new Intent(AdminMaintainProductsActivity.this, AdminHomeActivity.class));
                 finish();
                 Toast.makeText(AdminMaintainProductsActivity.this, "The Product is deleted successfully", Toast.LENGTH_SHORT).show();
             }
@@ -79,7 +79,7 @@ public class AdminMaintainProductsActivity extends AppCompatActivity {
 
     private void applyChanges() {
         String pName = name.getText().toString();
-        String pPrice = name.getText().toString();
+        String pPrice = price.getText().toString();
         String pDescrition = description.getText().toString();
 
         if (pName.equals("")) {
@@ -101,7 +101,7 @@ public class AdminMaintainProductsActivity extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         Toast.makeText(AdminMaintainProductsActivity.this, "Changes applied successfully", Toast.LENGTH_SHORT).show();
 
-                        startActivity(new Intent(AdminMaintainProductsActivity.this, SellerProductCategoryActivity.class));
+                        startActivity(new Intent(AdminMaintainProductsActivity.this, AdminHomeActivity.class));
                         finish();
                     }
                 }

@@ -1,10 +1,13 @@
-package com.example.f21g4_minions;
+package com.example.f21g4_minions.others;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+
+import com.example.f21g4_minions.R;
+import com.example.f21g4_minions.others.Product;
 
 import java.util.ArrayList;
 

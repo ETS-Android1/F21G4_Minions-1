@@ -1,4 +1,4 @@
-package com.example.f21g4_minions;
+package com.example.f21g4_minions.others;
 
 public class Product {
     private String product_img;

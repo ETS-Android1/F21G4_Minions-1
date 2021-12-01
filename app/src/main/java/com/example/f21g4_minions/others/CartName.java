@@ -1,4 +1,6 @@
-package com.example.f21g4_minions;
+package com.example.f21g4_minions.others;
+
+import com.example.f21g4_minions.others.Product;
 
 import java.util.ArrayList;
 
