@@ -145,7 +145,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
 
 
                                 // displays the dialog box
-                                builder.show();
+                               builder.show();
                             }
                         } else{
                             Toast.makeText(ResetPasswordActivity.this, "The security questions are not set up.", Toast.LENGTH_SHORT).show();

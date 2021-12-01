@@ -50,7 +50,7 @@
     <string name="activityAdminHome_maintainBtn_text">Maintain Products</string>
     <string name="activityAdminHome_checkOrdersBtn_text">Check New Orders</string>
     <string name="activityAdminHome_checkApproveOrdersBtn_text">Check and Approve new Products</string>
-    <string name="activityAdminHome_adminLogoutBtn_text">Check and Approve new Products</string>
+    <string name="activityAdminHome_adminLogoutBtn_text">Logout</string>
 
     <!-- Activity Admin Maintain Products -->
     <string name="activityAdminMaintainProducts_productNameMaintain_text">Product Name</string>
