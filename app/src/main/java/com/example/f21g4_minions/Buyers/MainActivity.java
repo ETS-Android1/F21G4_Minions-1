@@ -111,9 +111,9 @@ public class MainActivity extends AppCompatActivity {
         Rootref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.child("User").child(phone).exists()){
+                if(snapshot.child("Users").child(phone).exists()){
                     //We are getting the data and we will pass the data to the users class
-                    Users usersData = snapshot.child("User").child(phone).getValue(Users.class);
+                    Users usersData = snapshot.child("Users").child(phone).getValue(Users.class);
 
                     //Here we are checking if the input data is equals to the database data
                     if(usersData.getPhone().equals(phone)){
