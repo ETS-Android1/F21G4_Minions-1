@@ -1,7 +1,7 @@
 package com.example.f21g4_minions.Model;
 
 public class Products {
-    private String name;
+    private String pname;
     private String description;
     private String price;
     private String image;
@@ -14,7 +14,7 @@ public class Products {
     public Products(){ }
 
     public Products(String name, String description, String price, String image, String category, String pid, String date, String time, String productState) {
-        this.name = name;
+        this.pname = name;
         this.description = description;
         this.price = price;
         this.image = image;
@@ -25,12 +25,12 @@ public class Products {
         this.productState = productState;
     }
 
-    public String getName() {
-        return name;
+    public String getPname() {
+        return pname;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setPname(String pname) {
+        this.pname = pname;
     }
 
     public String getDescription() {

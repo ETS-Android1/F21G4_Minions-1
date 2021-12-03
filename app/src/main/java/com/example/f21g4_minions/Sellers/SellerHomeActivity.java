@@ -79,7 +79,7 @@ public class SellerHomeActivity extends AppCompatActivity implements NavigationV
         FirebaseRecyclerAdapter<Products, ItemViewHolder> adapter = new FirebaseRecyclerAdapter<Products, ItemViewHolder>(options) {
             @Override
             protected void onBindViewHolder(@NonNull ItemViewHolder productViewHolder, int i, @NonNull Products products) {
-                productViewHolder.txtProductName.setText(products.getName());
+                productViewHolder.txtProductName.setText(products.getPname());
                 productViewHolder.txtProductDescription.setText(products.getDescription());
                 productViewHolder.txtProductStatus.setText("State: " + products.getProductState());
                 productViewHolder.txtProductPrice.setText("Price = " + products.getPrice() + "$");

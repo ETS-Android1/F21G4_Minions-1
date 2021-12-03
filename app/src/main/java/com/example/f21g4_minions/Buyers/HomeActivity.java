@@ -81,6 +81,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
             }
         });
+
+
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
         // Passing each menu ID as a set of Ids because each
@@ -145,7 +147,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         FirebaseRecyclerAdapter<Products, ProductViewHolder> adapter = new FirebaseRecyclerAdapter<Products, ProductViewHolder>(options) {
             @Override
             protected void onBindViewHolder(@NonNull ProductViewHolder productViewHolder, int i, @NonNull Products products) {
-                productViewHolder.txtProductName.setText(products.getName());
+                productViewHolder.txtProductName.setText(products.getPname());
                 productViewHolder.txtProductDescription.setText(products.getDescription());
                 productViewHolder.txtProductPrice.setText("Price = "+ products.getPrice()+ "$");
                 Picasso.get().load(products.getImage()).into(productViewHolder.imageView);

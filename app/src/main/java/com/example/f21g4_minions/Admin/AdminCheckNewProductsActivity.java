@@ -13,7 +13,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.example.f21g4_minions.Interface.ItemClickListener;
 import com.example.f21g4_minions.Model.Products;
 import com.example.f21g4_minions.R;
 import com.example.f21g4_minions.ViewHolder.ProductViewHolder;
@@ -57,7 +56,7 @@ public class AdminCheckNewProductsActivity extends AppCompatActivity {
         FirebaseRecyclerAdapter<Products, ProductViewHolder> adapter = new FirebaseRecyclerAdapter<Products, ProductViewHolder>(options) {
             @Override
             protected void onBindViewHolder(@NonNull ProductViewHolder productViewHolder, int i, @NonNull Products products) {
-                productViewHolder.txtProductName.setText(products.getName());
+                productViewHolder.txtProductName.setText(products.getPname());
                 productViewHolder.txtProductDescription.setText(products.getDescription());
                 productViewHolder.txtProductPrice.setText("Price = "+ products.getPrice()+ "$");
                 Picasso.get().load(products.getImage()).into(productViewHolder.imageView);
